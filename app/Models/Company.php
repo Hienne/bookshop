@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
-    use HasFactory;
+    protected $table = 'companies';
+
+    public $timestamps = false;
+
+    public function books() {
+        return $this->hasMany('App\Models\Book');
+    }
 }

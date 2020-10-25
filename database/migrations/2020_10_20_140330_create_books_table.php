@@ -26,6 +26,7 @@ class CreateBooksTable extends Migration
             $table->bigInteger('price')->nullable();
             $table->bigInteger('cover_price')->nullable();
             $table->string('book_image')->nullable();
+            
             $table->foreign('author_id')->references('id')->on('authors');
             $table->foreign('company_id')->references('id')->on('companies');
             $table->foreign('category_id')->references('id')->on('categories');

@@ -7,5 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    use HasFactory;
+    protected $table = 'categories';
+
+    /*
+    *
+    *
+    relationship 1 - n (1 Category - n Book)
+    *
+    *
+    */
+
+    public function books() {
+        return $this->hasMany('App\Models\Book');
+    }
 }
