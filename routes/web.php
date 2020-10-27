@@ -14,8 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('front_end.home.index');
+// });
+
+// Route::get('/', function () {
+//     return view('front_end.product.show');
+// });
+
 Route::get('/', function () {
-    return view('front_end.home.index');
+    return view('front_end.cart.index');
 });
 
 
