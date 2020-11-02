@@ -49,8 +49,12 @@
 <div class="new-arrivals mt-3">
     <h2 class="text-center py-4 m-0 title">{{ trans('common.new_book') }}</h2>
     <div class="row">
-        {{-- @include('frontend.common.product-card') --}}
-        <div class="col-lg-2 col-md-4 col-sm-6 col-6 results-row">
+        @include('front_end.common.product-card')
+
+
+
+
+        {{-- <div class="col-lg-2 col-md-4 col-sm-6 col-6 results-row">
             <div class="card card-product">
                 <a href="#">
                     <img class="card-img-top" src="./storage/anh_bia/_ng_m_n.jpg" alt="...">
@@ -180,7 +184,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         
     </div>
 

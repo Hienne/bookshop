@@ -66,7 +66,7 @@
                             <label for="phone">{{ trans('auth.phone') }}</label>
 
                             <div>
-                                <input id="phone" type="number" class="form-control" name="phone" required autocomplete="phone">
+                                <input id="phone" type="text" class="form-control" name="phone" required autocomplete="phone">
                             </div>
                         </div>
 

@@ -1,6 +1,6 @@
 <div class="form-group row my-4">
     <div class="col">
-        <a href="#" class="btn btn-block btn-google"><i
+        <a href={{ route('loginWithGG') }} class="btn btn-block btn-google"><i
                 class="fab fa-google"></i> Google</a>
     </div>
     <div class="col">
