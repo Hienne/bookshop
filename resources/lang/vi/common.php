@@ -26,4 +26,12 @@ return [
     'number' => 'Số lượng',
     'book_des' => 'Giới thiệu sách',
     'detail' => 'giỏ hàng',
+    'home' => 'Trang chủ',
+    'previous' => 'Trang trước',
+    'next' => 'Trang sau',
+    'new_book' => "New Books",
+    'profile' => 'Thông tin tài khoản',
+    'my_order' => 'Đơn đặt hàng',
+    'change_pass' => 'Đổi mật khẩu',
+    'logout' => 'Đăng xuất',
 ];

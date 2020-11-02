@@ -26,4 +26,12 @@ return [
     'number' => 'Number',
     'book_des' => 'Book Description',
     'detail' => 'your cart',
+    'home' => 'Home',
+    'previous' => 'Previous',
+    'next' => 'Next',
+    'new_book' => 'New books',
+    'profile' => 'Profile',
+    'my_order' => 'My Order',
+    'change_pass' => 'Change Password',
+    'logout' => 'Logout',
 ];

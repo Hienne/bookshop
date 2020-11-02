@@ -1,7 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
-/*
+/*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
@@ -71,7 +70,7 @@ body {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #444;
   text-align: left;
   background-color: #f8fafc;
 }

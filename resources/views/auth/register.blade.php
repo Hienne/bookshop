@@ -1,43 +1,97 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+@extends('layouts.master')
 
-        <x-jet-validation-errors class="mb-4" />
+@section('title', trans('auth.register'))
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+@section('content')
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body col-md-8 offset-md-2">
+                    <h3 class="card-title text-center">{{ trans('auth.register') }}</h3>
 
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
+                        @include('front_end.common.auth_button')
+                        <div class="form-group">
+                            <label for="name">{{ trans('auth.name') }}</label>
+
+                            <div>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">{{ trans('auth.email') }}</label>
+
+                            <div>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">{{ trans('auth.pass') }}</label>
+
+                            <div>
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password-confirm">{{ trans('auth.pass_conf') }}</label>
+
+                            <div>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">{{ trans('auth.phone') }}</label>
+
+                            <div>
+                                <input id="phone" type="number" class="form-control" name="phone" required autocomplete="phone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">{{ trans('auth.address') }}</label>
+
+                            <div>
+                                <input id="address" type="text" class="form-control" name="address" required autocomplete="address">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    {{ trans('auth.register') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    {{ trans('auth.have_account') }} <a href="{{ route('login') }}">{{ trans('auth.login') }}</a>
+                </div>
             </div>
-
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-jet-button class="ml-4">
-                    {{ __('Register') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+        </div>
+    </div>
+</div>
+@endsection
