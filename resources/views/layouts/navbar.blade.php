@@ -1,8 +1,7 @@
 <!-- Navbar -->
 <nav id="navbar" class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ route('home') }}">
             <img src="{{ asset('./storage/logo/logo.png') }}" width="130" height="40" alt="logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -13,7 +12,7 @@
             <!-- Left -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('home') }}">
                         {{ trans('common.home')}}
                     </a>
                 </li>
@@ -23,21 +22,12 @@
                         {{ trans('common.category') }}
                     </a>
                     <div class="dropdown-menu" area-labelledby="navbarDropdown">
+                        @foreach ($categories = App\Models\Category::all()->sortBy('category_name') as $category)
                         <a class="dropdown-item" href="#">
-                            văn học việt nam
+                            {{ $category->category_name}}
                         </a>
-                        <a class="dropdown-item" href="#">
-                            văn học việt nam
-                        </a>
-                        <a class="dropdown-item" href="#">
-                            văn học việt nam
-                        </a>
-                        <a class="dropdown-item" href="#">
-                            văn học việt nam
-                        </a>
-                        <a class="dropdown-item" href="#">
-                            văn học việt nam
-                        </a>
+                            
+                        @endforeach
                     </div>
                 </li>
                 <li class="nav-item">

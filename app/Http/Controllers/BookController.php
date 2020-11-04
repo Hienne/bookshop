@@ -19,6 +19,9 @@ class BookController extends Controller
 
     public function showAllBook()
     {
-        
+        $bookInPage = 18;
+        $books = $this->bookRepository->paginationBook($bookInPage);
+
+        return view('front_end.product.allBook', compact('books'));
     }
 }

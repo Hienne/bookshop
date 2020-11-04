@@ -12,6 +12,12 @@ use Laravel\Socialite\Facades\Socialite;
 class LoginController extends Controller
 {
 
+    public function userLogout() 
+    {
+        Auth::logout();
+        return redirect('/');
+    }
+
     public function redirectToProvider()
     {
         return Socialite::driver('google')->redirect();

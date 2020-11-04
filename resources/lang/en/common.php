@@ -29,7 +29,7 @@ return [
     'home' => 'Home',
     'previous' => 'Previous',
     'next' => 'Next',
-    'new_book' => 'New books',
+    'books' => 'Books',
     'profile' => 'Profile',
     'my_order' => 'My Order',
     'change_pass' => 'Change Password',

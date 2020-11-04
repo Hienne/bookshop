@@ -27,7 +27,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 78000, 
                 'category_id' => rand(1, 10),
                 'price' => 62000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/you-can-win_1_1_1.jpg',
+                'book_image' => '/storage/anh-bia/you-can-win_1_1_1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -42,7 +42,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 120000, 
                 'category_id' => rand(1, 10),
                 'price' => 96000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/img036_8.jpg',
+                'book_image' => '/storage/anh-bia/img036_8.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -57,7 +57,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 92000, 
                 'category_id' => rand(1, 10),
                 'price' => 74000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/suc_manh_ngoi_but_01405080381.jpg',
+                'book_image' => '/storage/anh-bia/suc_manh_ngoi_but_01405080381.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -72,7 +72,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 78000, 
                 'category_id' => rand(1, 10),
                 'price' => 62000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/cover--yeu-mot-nguoi-la-dieu-gian-don.u547.d20161101.t134821.768163.jpg',
+                'book_image' => '/storage/anh-bia/cover--yeu-mot-nguoi-la-dieu-gian-don.u547.d20161101.t134821.768163.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -87,7 +87,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 119000, 
                 'category_id' => rand(1, 10),
                 'price' => 95200, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/yeu-em-tu-cai-nhin-dau-tien_1_1.jpg',
+                'book_image' => '/storage/anh-bia/yeu-em-tu-cai-nhin-dau-tien_1_1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -102,7 +102,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 79000, 
                 'category_id' => rand(1, 10),
                 'price' => 63000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/bia-1---yeu-di-dung-so.u547.d20170208.t163112.426685.jpg',
+                'book_image' => '/storage/anh-bia/bia-1---yeu-di-dung-so.u547.d20170208.t163112.426685.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -117,7 +117,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 99000, 
                 'category_id' => rand(1, 10),
                 'price' => 69000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/y-tuong-nay-la-cua-chung-minh.jpg',
+                'book_image' => '/storage/anh-bia/y-tuong-nay-la-cua-chung-minh.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -132,7 +132,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 56000, 
                 'category_id' => rand(1, 10),
                 'price' => 44800, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/img106_1_2.jpg',
+                'book_image' => '/storage/anh-bia/img106_1_2.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -147,7 +147,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 75000, 
                 'category_id' => rand(1, 10),
                 'price' => 60000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/xoa-het-dau-vet-truoc-khi-ve-nha_3.jpg',
+                'book_image' => '/storage/anh-bia/xoa-het-dau-vet-truoc-khi-ve-nha_3.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -162,7 +162,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 75000, 
                 'category_id' => rand(1, 10),
                 'price' => 60000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/img911_3.jpg',
+                'book_image' => '/storage/anh-bia/img911_3.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -177,7 +177,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 30000, 
                 'category_id' => rand(1, 10),
                 'price' => 24000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/xoa_bop_chan2.jpg',
+                'book_image' => '/storage/anh-bia/xoa_bop_chan2.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -192,7 +192,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 45000, 
                 'category_id' => rand(1, 10),
                 'price' => 32000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/vong-quanh-the-gioi-nuoc-uc.jpg',
+                'book_image' => '/storage/anh-bia/vong-quanh-the-gioi-nuoc-uc.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -207,7 +207,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 45000, 
                 'category_id' => rand(1, 10),
                 'price' => 32000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/vong-quanh-the-gioi-nuoc-anh.jpg',
+                'book_image' => '/storage/anh-bia/vong-quanh-the-gioi-nuoc-anh.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -222,7 +222,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 45000, 
                 'category_id' => rand(1, 10),
                 'price' => 32000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/vong-quanh-the-gioi-han-quoc.jpg',
+                'book_image' => '/storage/anh-bia/vong-quanh-the-gioi-han-quoc.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -237,7 +237,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 99000, 
                 'category_id' => rand(1, 10),
                 'price' => 79000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/img312_1_13.jpg',
+                'book_image' => '/storage/anh-bia/img312_1_13.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -252,7 +252,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 139000, 
                 'category_id' => rand(1, 10),
                 'price' => 111000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/vo-cung-tan-nhan-vo-cung-yeu-thuong_1_2.jpg',
+                'book_image' => '/storage/anh-bia/vo-cung-tan-nhan-vo-cung-yeu-thuong_1_2.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -267,7 +267,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 200000, 
                 'category_id' => rand(1, 10),
                 'price' => 160000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/viet-nam-nhat-ban-giao-luu-van-hoa.u547.d20160919.t104408.115462.jpg',
+                'book_image' => '/storage/anh-bia/viet-nam-nhat-ban-giao-luu-van-hoa.u547.d20160919.t104408.115462.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -282,7 +282,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 49000, 
                 'category_id' => rand(1, 10),
                 'price' => 39000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/viet_gi_cung_dung_3.jpg',
+                'book_image' => '/storage/anh-bia/viet_gi_cung_dung_3.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -297,7 +297,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 40000, 
                 'category_id' => rand(1, 10),
                 'price' => 32000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/november_4th_040_1.jpg',
+                'book_image' => '/storage/anh-bia/november_4th_040_1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -312,7 +312,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 56000, 
                 'category_id' => rand(1, 10),
                 'price' => 45000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/ghi-chep-bao.u547.d20161212.t155410.367006.jpg',
+                'book_image' => '/storage/anh-bia/ghi-chep-bao.u547.d20161212.t155410.367006.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -327,7 +327,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 105000, 
                 'category_id' => rand(1, 10),
                 'price' => 84000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/img505.u2469.d20161028.t112704.322328.jpg',
+                'book_image' => '/storage/anh-bia/img505.u2469.d20161028.t112704.322328.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -342,7 +342,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 189000, 
                 'category_id' => rand(1, 10),
                 'price' => 151000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/van-minh-phuong-tay_outline_12-12-2016-03.u2469.d20170105.t143152.936665.jpg',
+                'book_image' => '/storage/anh-bia/van-minh-phuong-tay_outline_12-12-2016-03.u2469.d20170105.t143152.936665.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -357,7 +357,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 36000, 
                 'category_id' => rand(1, 10),
                 'price' => 25000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/nxbtrestoryfull_04112014_021101.jpg',
+                'book_image' => '/storage/anh-bia/nxbtrestoryfull_04112014_021101.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -372,7 +372,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 186000, 
                 'category_id' => rand(1, 10),
                 'price' => 140000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/img425_7.jpg',
+                'book_image' => '/storage/anh-bia/img425_7.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -387,7 +387,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 135000, 
                 'category_id' => rand(1, 10),
                 'price' => 101000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/luyen_thi_toan_1.jpg',
+                'book_image' => '/storage/anh-bia/luyen_thi_toan_1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -402,7 +402,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 25000, 
                 'category_id' => rand(1, 10),
                 'price' => 20000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/img043_28.jpg',
+                'book_image' => '/storage/anh-bia/img043_28.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -417,7 +417,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 35000, 
                 'category_id' => rand(1, 10),
                 'price' => 28000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/22132711745440.jpg',
+                'book_image' => '/storage/anh-bia/22132711745440.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -432,7 +432,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 125000, 
                 'category_id' => rand(1, 10),
                 'price' => 88000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/nxbtrestorythumb_04552011_045517.jpg',
+                'book_image' => '/storage/anh-bia/nxbtrestorythumb_04552011_045517.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -447,7 +447,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 44000, 
                 'category_id' => rand(1, 10),
                 'price' => 35000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/tu-trong-cong-viec-a.jpg',
+                'book_image' => '/storage/anh-bia/tu-trong-cong-viec-a.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -462,7 +462,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 85000, 
                 'category_id' => rand(1, 10),
                 'price' => 68000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/img893_3_4.jpg',
+                'book_image' => '/storage/anh-bia/img893_3_4.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -477,7 +477,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 70000, 
                 'category_id' => rand(1, 10),
                 'price' => 56000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/tuoi-tre-dang-gia-bao-nhieu.u547.d20161012.t113832.888179.jpg',
+                'book_image' => '/storage/anh-bia/tuoi-tre-dang-gia-bao-nhieu.u547.d20161012.t113832.888179.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
         ],
@@ -492,7 +492,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 64000, 
                 'category_id' => rand(1, 10),
                 'price' => 51000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/img530_2.jpg',
+                'book_image' => '/storage/anh-bia/img530_2.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -507,7 +507,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 85000, 
                 'category_id' => rand(1, 10),
                 'price' => 68000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/tuoi-20.jpg',
+                'book_image' => '/storage/anh-bia/tuoi-20.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -522,7 +522,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 232000, 
                 'category_id' => rand(1, 10),
                 'price' => 162000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/tu-duy-phap-ly.jpg',
+                'book_image' => '/storage/anh-bia/tu-duy-phap-ly.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -537,7 +537,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 99000, 
                 'category_id' => rand(1, 10),
                 'price' => 79000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/img307.gif',
+                'book_image' => '/storage/anh-bia/img307.gif',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -552,7 +552,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 140000, 
                 'category_id' => rand(1, 10),
                 'price' => 98000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/tu-duy-va-chia-se_1.jpg',
+                'book_image' => '/storage/anh-bia/tu-duy-va-chia-se_1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -567,7 +567,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 29000, 
                 'category_id' => rand(1, 10),
                 'price' => 23000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/ai_o_phia_sau_ban_the-1.jpg',
+                'book_image' => '/storage/anh-bia/ai_o_phia_sau_ban_the-1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -582,7 +582,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 29000, 
                 'category_id' => rand(1, 10),
                 'price' => 23000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/nhung_nguoi_ban_o_hoang_mac-1.jpg',
+                'book_image' => '/storage/anh-bia/nhung_nguoi_ban_o_hoang_mac-1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -597,7 +597,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 29000, 
                 'category_id' => rand(1, 10),
                 'price' => 23000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/nhung_nguoi_ban_tren_canh_dong-1.jpg',
+                'book_image' => '/storage/anh-bia/nhung_nguoi_ban_tren_canh_dong-1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -612,7 +612,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 29000, 
                 'category_id' => rand(1, 10),
                 'price' => 23000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/nhung_nguoi_ban_o_hon_dao_phia_nam-1.jpg',
+                'book_image' => '/storage/anh-bia/nhung_nguoi_ban_o_hon_dao_phia_nam-1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -627,7 +627,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 29000, 
                 'category_id' => rand(1, 10),
                 'price' => 23000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/nhung_nguoi_ban_duoi_bien-1.jpg',
+                'book_image' => '/storage/anh-bia/nhung_nguoi_ban_duoi_bien-1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ],
@@ -642,7 +642,7 @@ class BookSeeder extends Seeder
                 'cover_price' => 29000, 
                 'category_id' => rand(1, 10),
                 'price' => 23000, 
-                'book_image' => '/storage/app/hinh-anh/anh-bia/nhung_nguoi_ban_tren_bo_ho-1.jpg',
+                'book_image' => '/storage/anh-bia/nhung_nguoi_ban_tren_bo_ho-1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
         ]

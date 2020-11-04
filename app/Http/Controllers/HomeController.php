@@ -18,10 +18,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        // $books = $this->bookRepository->getAll();
-        $books = Book::all();
+        $books = $this->bookRepository->getBook();
 
-        return view('front_end.home.index', compact('books', $books));
+        return view('front_end.home.index', compact('books'));
     
     }
 
@@ -32,11 +31,5 @@ class HomeController extends Controller
         $products = $this->productRepository->getSearchProduct($keyword);
 
         return view('frontend.home.search', compact(['products', 'keyword']));
-    }
-
-    public function userLogout() 
-    {
-        Auth::logout();
-        return redirect('/');
     }
 }

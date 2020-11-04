@@ -29,7 +29,7 @@ return [
     'home' => 'Trang chủ',
     'previous' => 'Trang trước',
     'next' => 'Trang sau',
-    'new_book' => "New Books",
+    'books' => "Sách",
     'profile' => 'Thông tin tài khoản',
     'my_order' => 'Đơn đặt hàng',
     'change_pass' => 'Đổi mật khẩu',
