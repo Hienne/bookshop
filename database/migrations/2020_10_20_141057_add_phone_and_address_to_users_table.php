@@ -16,6 +16,7 @@ class AddPhoneAndAddressToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->bigInteger('phone')->nullable();
             $table->string('address')->nullable();
+            $table->integer('role')->nullable();
         });
     }
 

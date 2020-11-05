@@ -34,4 +34,5 @@ return [
     'my_order' => 'Đơn đặt hàng',
     'change_pass' => 'Đổi mật khẩu',
     'logout' => 'Đăng xuất',
+    'authors' => 'Tác giả',
 ];

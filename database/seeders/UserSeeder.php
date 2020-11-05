@@ -24,6 +24,7 @@ class UserSeeder extends Seeder
                 'phone' => 1664872279,
                 'address' => 'Hà Nội',
                 'remember_token' => Str::random(10),
+                'role' => 0,
                 'created_at' =>new DateTime(),
                 'updated_at' => new DateTime()
             ]);

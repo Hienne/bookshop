@@ -20,7 +20,7 @@ class CommentSeeder extends Seeder
 			         	[
 			         		[
 					            'book_id' =>  rand(1, 42),
-					            'user_id' => rand(6, 9),
+					            'user_id' => rand(1, 4),
 					            'title' => 'Một cuốn sách rất đáng đọc '.$i,
 					            'content' => 'Sách hay lắm :)) - comment số '.$i,
 					            'rate' => rand(2,5),

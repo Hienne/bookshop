@@ -34,4 +34,5 @@ return [
     'my_order' => 'My Order',
     'change_pass' => 'Change Password',
     'logout' => 'Logout',
+    'authors' => 'Authors',
 ];

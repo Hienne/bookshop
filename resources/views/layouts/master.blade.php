@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/user.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/common.css') }}">
 
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
     <!-- Title -->
     <title>@yield('title')</title>
 
@@ -39,10 +42,14 @@
 
     @include('layouts.footer')
 
-    <!-- Optional JavaScript -->
-    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+    {{-- <!-- Optional JavaScript -->
+    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script> --}}
 
     @yield('script')
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
     
 </body>
 

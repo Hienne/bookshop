@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\OrderDetail;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,7 +20,12 @@ class DatabaseSeeder extends Seeder
             AuthorSeeder::class,
             CompanySeeder::class,
             CategorySeeder::class,
-            BookSeeder::class
+            BookSeeder::class,
+            CommentSeeder::class,
+            PaymentSeeder::class,
+            OrderSeeder::class,
+            OrderDetailSeeder::class
+            
         ]);
     }
 }

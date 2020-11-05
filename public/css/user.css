@@ -35,7 +35,14 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
+
+
+  /* Card author */
+  .card-author {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #666;
+  }
   
   /* Rating Star */
   .stars-outer {
