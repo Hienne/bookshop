@@ -1,5 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/js/bootstrap.js": "/js/bootstrap.js"
+    "/js/bootstrap.js": "/js/bootstrap.js",
+    "/js/jquery.min.js": "/js/jquery.min.js",
+    "/js/slick.min.js": "/js/slick.min.js",
+    "/css/slick.css": "/css/slick.css",
+    "/css/slick-theme.css": "/css/slick-theme.css"
 }

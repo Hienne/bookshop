@@ -10,4 +10,9 @@ class Comment extends Model
     protected $table = 'comments';
 
     public $timestamps = true;
+
+    public function user() 
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }

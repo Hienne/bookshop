@@ -8,12 +8,16 @@ use Illuminate\Http\Request;
 class BookController extends Controller
 {
     protected $bookRepository;
+    protected $categoryRepository;
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(BookRepository $bookRepository) {
+    public function __construct(
+        BookRepository $bookRepository) 
+    {
         $this->bookRepository = $bookRepository;
     }
 

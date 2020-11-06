@@ -22,11 +22,23 @@ class Book extends Model
     *
     */
 
-    public function category() {
+    public function category() 
+    {
         return $this->belongsTo('App\Models\Category');
     }
 
-    public function author() {
+    public function author() 
+    {
         return $this->belongsTo('App\Models\Author');
+    }
+
+    public function company() 
+    {
+        return $this->belongsTo('App\Models\Company');
+    }
+
+    public function orders() 
+    {
+        return $this->belongsToMany('App\Models\Order');
     }
 }

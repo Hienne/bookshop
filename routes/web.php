@@ -28,7 +28,8 @@ Route::get('/search', 'HomeController@search')->name('search');
 
 
 /***********************Book*****************************/
-Route::get('/books', [BookController::class, 'showAllBook'])->name('books');
+Route::get('/book', [BookController::class, 'showAllBook'])->name('books');
+// Route::get('/category/{id}', )
 
 
 /*********************Login Google************************** */

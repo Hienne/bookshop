@@ -26,7 +26,6 @@
                         <a class="dropdown-item" href="#">
                             {{ $category->category_name}}
                         </a>
-                            
                         @endforeach
                     </div>
                 </li>

@@ -59,20 +59,65 @@
 <div class="mt-5">
     <h2 class="text-center py-4 m-0 title">{{ trans('common.authors') }}</h2>
     
-    @include('front_end.author.author_card')
+    {{-- @include('front_end.author.author_card') --}}
+<div class="container">
+    <div class="your-class row">
+        <div class="col-md-12">
+            <img src="{{ asset('./storage/author/A_J Hoge.jpg') }}" 
+                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
+                            class="rounded-circle d-block w-100" alt="...">
+        </div>
+        <div class="col-md-12">
+            <img src="{{ asset('./storage/author/adam-khoo.jpg') }}" 
+                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
+                            class="rounded-circle d-block w-100" alt="...">
+        </div>
+        <div class="col-md-12">
+            <img src="{{ asset('./storage/author/agatha_christie.jpg') }}" 
+                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
+                            class="rounded-circle d-block w-100" alt="...">
+        </div>
+        <div class="col-md-12">
+            <img src="{{ asset('./storage/author/A_J Hoge.jpg') }}" 
+                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
+                            class="rounded-circle d-block w-100" alt="...">
+        </div>
+        <div class="col-md-12">
+            <img src="{{ asset('./storage/author/A_J Hoge.jpg') }}" 
+                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
+                            class="rounded-circle d-block w-100" alt="...">
+        </div>
+        <div class="col-md-12">
+            <img src="{{ asset('./storage/author/A_J Hoge.jpg') }}" 
+                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
+                            class="rounded-circle d-block w-100" alt="...">
+        </div>
+        <div class="col-md-12">
+            <img src="{{ asset('./storage/author/A_J Hoge.jpg') }}" 
+                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
+                            class="rounded-circle d-block w-100" alt="...">
+        </div>
+        <div class="col-md-12">
+            <img src="{{ asset('./storage/author/A_J Hoge.jpg') }}" 
+                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
+                            class="rounded-circle d-block w-100" alt="...">
+        </div>
+    </div>
+</div>
 </div>
 
 @endsection
 
 @section('script')
     <script type="text/javascript">
-        $('.slider-author').slick({
-  dots: true,
-  infinite: false,
-  speed: 300,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  responsive: [
+        $('.your-class').slick({
+            dots: true,
+            arrows: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            responsive: [
     {
       breakpoint: 1024,
       settings: {
@@ -97,6 +142,6 @@
       }
     }
   ]
-});
+        })
   </script>
 @endsection
