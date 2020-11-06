@@ -17,11 +17,16 @@ class BookRepository extends EloquentRepository implements BookInterface
 
     public function paginationBook()
     {
-        return $this->_model::paginate(self::PAGINATE);
+        return $this->_model->paginate(self::PAGINATE);
     }
 
     public function getBook()
     {
         return $this->_model->take(6)->get();
+    }
+
+    public function getBookOfCategory($id)
+    {
+        return $this->_model->where('category_id', $id)->paginate(self::PAGINATE);
     }
 }

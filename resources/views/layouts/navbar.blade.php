@@ -23,7 +23,7 @@
                     </a>
                     <div class="dropdown-menu" area-labelledby="navbarDropdown">
                         @foreach ($categories = App\Models\Category::all()->sortBy('category_name') as $category)
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{ route('category', ['id' => $category->id]) }}">
                             {{ $category->category_name}}
                         </a>
                         @endforeach

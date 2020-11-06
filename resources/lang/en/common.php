@@ -35,4 +35,5 @@ return [
     'change_pass' => 'Change Password',
     'logout' => 'Logout',
     'authors' => 'Authors',
+    'list_book' => 'List Book',
 ];

@@ -28,4 +28,5 @@ return [
     'address' => 'Địa chỉ',
     'register' => 'Đăng ký',
     'have_account' => 'Bạn đã có tài khoản?',
+    'list_book' => 'Danh sách sách',
 ];

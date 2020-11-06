@@ -21,6 +21,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/home', [HomeController::class, 'index'])->name('home.login');
 
+
 Route::post('/logout', [LoginController::class, 'userLogout'])->name('home.logout');
 
 
@@ -29,7 +30,10 @@ Route::get('/search', 'HomeController@search')->name('search');
 
 /***********************Book*****************************/
 Route::get('/book', [BookController::class, 'showAllBook'])->name('books');
-// Route::get('/category/{id}', )
+Route::get('/category/{id}', [HomeController::class, 'getBookOfCategory'])->name('category');
+// Route::get('/category/{id}', function($id) {
+//     echo $id;
+// });
 
 
 /*********************Login Google************************** */

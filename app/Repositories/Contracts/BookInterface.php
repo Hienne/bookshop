@@ -7,4 +7,6 @@ interface BookInterface
     public function paginationBook();
 
     public function getBook();
+
+    public function getBookOfCategory($id);
 }

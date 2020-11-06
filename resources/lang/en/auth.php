@@ -27,5 +27,6 @@ return [
     'phone' => 'Phone',
     'address' => 'Address',
     'register' => 'Register',
-    'have_account' => 'Do you already have an account?'
+    'have_account' => 'Do you already have an account?',
+    
 ];
