@@ -36,4 +36,5 @@ return [
     'logout' => 'Logout',
     'authors' => 'Authors',
     'list_book' => 'List Book',
+    'best_selling_book' => 'Best selling books',
 ];

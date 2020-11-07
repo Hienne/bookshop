@@ -35,4 +35,5 @@ return [
     'change_pass' => 'Đổi mật khẩu',
     'logout' => 'Đăng xuất',
     'authors' => 'Tác giả',
+    'best_selling_book' => 'Sách bán chạy',
 ];

@@ -31,9 +31,9 @@ Route::get('/search', 'HomeController@search')->name('search');
 /***********************Book*****************************/
 Route::get('/book', [BookController::class, 'showAllBook'])->name('books');
 Route::get('/category/{id}', [HomeController::class, 'getBookOfCategory'])->name('category');
-// Route::get('/category/{id}', function($id) {
-//     echo $id;
-// });
+
+
+Route::get('/test', [HomeController::class, 'test']);
 
 
 /*********************Login Google************************** */

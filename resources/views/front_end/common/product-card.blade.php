@@ -16,11 +16,21 @@
                     <span class="text-muted">{{  $book->author->author_name }}</span>
                 </div>
                 <h5 class="card-text price mb-1">{{  $book->price  }} VNĐ</h5>
+                
+                @if($book->comments->isEmpty())
+                <div class="mb-1">
+                    <div>
+                        <p>Không có nhận xét</p>
+                    </div>
+                </div>
+                @else
                 <div class="mb-1">
                     <span class="stars-outer">
-                        <div class="stars-inner" style="width: 50%"></div>
+                        <div class="stars-inner" style="width: {{  $book->comments->avg('rate') * 10 }}%"></div>
                     </span>
+                    <p>({{  $book->comments->count('id') }} nhận xét)</p>
                 </div>
+                @endif
             </div>
         </div>
     </div>

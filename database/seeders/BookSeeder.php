@@ -30,7 +30,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/you-can-win_1_1_1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Yoga Toàn Thư', 
@@ -46,7 +46,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/img036_8.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Yêu Người Yêu Người Ta (Tái Bản 2014) - Tặng Kèm Phụ Bản Yêu Anh Hơn Người Anh Yêu', 
@@ -62,7 +62,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/suc_manh_ngoi_but_01405080381.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Yêu Một Người Là Điều Giản Đơn?', 
@@ -78,7 +78,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/cover--yeu-mot-nguoi-la-dieu-gian-don.u547.d20161101.t134821.768163.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Yêu Em Từ Cái Nhìn Đầu Tiên (Ấn Bản Kỷ Niệm) - Tặng Kèm 7 Bookmark Nhân Vật Và 3 Postcard', 
@@ -94,7 +94,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/yeu-em-tu-cai-nhin-dau-tien_1_1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Yêu Đi Đừng Sợ', 
@@ -110,7 +110,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/bia-1---yeu-di-dung-so.u547.d20170208.t163112.426685.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Ý Tưởng Này Là Của Chúng Mình', 
@@ -126,7 +126,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/y-tuong-nay-la-cua-chung-minh.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Xương Rồng Và Cây Mọng Nước', 
@@ -142,7 +142,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/img106_1_2.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Xóa Hết Dấu Vết Trước Khi Về Nhà (Tái Bản 2014)', 
@@ -158,7 +158,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/xoa-het-dau-vet-truoc-khi-ve-nha_3.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Xóa Hết Dấu Vết Trước Khi Về Nhà', 
@@ -174,7 +174,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/img911_3.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Xoa Bóp Chân Chữa Bách Bệnh Theo Y Học Cổ Truyền Trung Hoa', 
@@ -190,7 +190,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/xoa_bop_chan2.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Vòng Quanh Thế Giới - Nước Úc', 
@@ -206,7 +206,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/vong-quanh-the-gioi-nuoc-uc.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Vòng Quanh Thế Giới - Nước Anh', 
@@ -222,7 +222,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/vong-quanh-the-gioi-nuoc-anh.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Vòng Quanh Thế Giới - Hàn Quốc', 
@@ -238,7 +238,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/vong-quanh-the-gioi-han-quoc.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Vô Cùng Tàn Nhẫn, Vô Cùng Yêu Thương (Tập 2)', 
@@ -254,7 +254,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/img312_1_13.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Vô Cùng Tàn Nhẫn Vô Cùng Yêu Thương', 
@@ -270,7 +270,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/vo-cung-tan-nhan-vo-cung-yeu-thuong_1_2.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Việt Nam Và Nhật Bản Giao Lưu Văn Hóa (Bìa Mềm)', 
@@ -286,7 +286,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/viet-nam-nhat-ban-giao-luu-van-hoa.u547.d20160919.t104408.115462.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Viết Gì Cũng Đúng (Tái Bản 2013)', 
@@ -302,7 +302,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/viet_gi_cung_dung_3.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 3
+                
         ],
         [ 
                 'book_name' => 'Viết Cho Con Đang Tuổi Dậy Thì', 
@@ -318,7 +318,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/november_4th_040_1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Viết Báo & Theo Đuổi Sự Kiện', 
@@ -334,7 +334,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/ghi-chep-bao.u547.d20161212.t155410.367006.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Vi Điều Khiển Và Ứng Dụng Arduino Dành Cho Người Tự Học', 
@@ -350,7 +350,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/img505.u2469.d20161028.t112704.322328.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Văn Minh Phương Tây Và Phần Còn Lại Của Thế Giới', 
@@ -366,7 +366,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/van-minh-phuong-tay_outline_12-12-2016-03.u2469.d20170105.t143152.936665.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Út Quyên Và Tôi (Tái Bản 2014)', 
@@ -382,7 +382,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/nxbtrestoryfull_04112014_021101.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Tuyệt Đỉnh Luyện Đề Thi THPT Quốc Gia Môn Vật Lí (Trọn Bộ 2 Tập)', 
@@ -398,7 +398,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/img425_7.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Tuyệt Đỉnh Luyện Đề Thi THPT Quốc Gia Môn Toán Học', 
@@ -414,7 +414,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/luyen_thi_toan_1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Tuyển Tập Đồ Hình Diện Chẩn Điều Khiển Liệu Pháp Và Xoa Bóp Việt Nam', 
@@ -430,7 +430,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/img043_28.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Tuyển Chọn Đề Thi Học SInh Giỏi Toán Tiểu Học', 
@@ -446,7 +446,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/22132711745440.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Tương lai Khác Thường - Những Xu Hướng Hàng Đầu Sẽ Định Hình Lại Thế Giới Trong 20 Năm Tới', 
@@ -462,7 +462,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/nxbtrestorythumb_04552011_045517.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Tu Trong Công Việc', 
@@ -478,7 +478,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/tu-trong-cong-viec-a.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Tuần Làm Việc 4 Giờ (Tái Bản 2015)', 
@@ -494,7 +494,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/img893_3_4.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Tuổi Trẻ Đáng Giá Bao Nhiêu', 
@@ -510,7 +510,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/tuoi-tre-dang-gia-bao-nhieu.u547.d20161012.t113832.888179.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Tuổi Dậy Thì - Khi Bố Mẹ "Hồi Teen"', 
@@ -526,7 +526,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/img530_2.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Tuổi 20 - Những Năm Tháng Quyết Định Cuộc Đời Bạn', 
@@ -542,7 +542,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/tuoi-20.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Tư Duy Pháp Lý Của Luật Sư', 
@@ -558,7 +558,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/tu-duy-phap-ly.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 4
+                
         ],
         [ 
                 'book_name' => 'Tư Duy Như Một Kẻ Lập Dị (Tái Bản)', 
@@ -574,7 +574,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/img307.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 5
+                
         ],
         [ 
                 'book_name' => 'Tư Duy & Chia Sẻ (Kèm DVD)', 
@@ -590,7 +590,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/tu-duy-va-chia-se_1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 5
+                
         ],
         [ 
                 'book_name' => 'Truyện Ehon Nhật Bản - Ai Ở Sau Lưng Bạn Thế?', 
@@ -606,7 +606,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/ai_o_phia_sau_ban_the-1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 5
+                
         ],
         [ 
                 'book_name' => 'Truyện Ehon Nhật Bản: Ai Ở Sau Lưng Bạn Thế? - Những Người Bạn Trên Hoang Mạc', 
@@ -622,7 +622,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/nhung_nguoi_ban_o_hoang_mac-1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 5
+                
         ],
         [ 
                 'book_name' => 'Truyện Ehon Nhật Bản: Ai Ở Sau Lưng Bạn Thế? - Những Người Bạn Trên Cánh Đồng', 
@@ -638,7 +638,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/nhung_nguoi_ban_tren_canh_dong-1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 5
+                
         ],
         [ 
                 'book_name' => 'Truyện Ehon Nhật Bản: Ai Ở Sau Lưng Bạn Thế? - Những Người Bạn Ở Hòn Đảo Phía Nam Nhật Bản', 
@@ -654,7 +654,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/nhung_nguoi_ban_o_hon_dao_phia_nam-1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 5
+                
         ],
         [ 
                 'book_name' => 'Truyện Ehon Nhật Bản: Ai Ở Sau Lưng Bạn Thế? - Những Người Bạn Dưới Đáy Biển', 
@@ -670,7 +670,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/nhung_nguoi_ban_duoi_bien-1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 5
+                
         ],
         [ 
                 'book_name' => 'Truyện Ehon Nhật Bản: Ai Ở Sau Lưng Bạn Thế? - Những Người Bạn Bên Bờ Hồ', 
@@ -686,7 +686,7 @@ class BookSeeder extends Seeder
                 'book_image' => '/storage/anh_bia/nhung_nguoi_ban_tren_bo_ho-1.jpg',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
-                'rate' => 5
+                
         ]
         ]);
     }

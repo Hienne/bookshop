@@ -20,6 +20,7 @@ class CreateCommentsTable extends Migration
             $table->string('title', 255);
             $table->longText('content', 20000);
             $table->smallInteger('rate');
+            
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('book_id')->references('id')->on('books');
             $table->timestamps();

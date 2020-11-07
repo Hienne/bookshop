@@ -39,6 +39,12 @@ class Book extends Model
 
     public function orders() 
     {
-        return $this->belongsToMany('App\Models\Order');
+        return $this->belongsToMany('App\Models\Order', 'order_details');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
+
 }

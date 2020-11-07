@@ -9,4 +9,6 @@ interface BookInterface
     public function getBook();
 
     public function getBookOfCategory($id);
+
+    public function getBestSellingBook();
 }

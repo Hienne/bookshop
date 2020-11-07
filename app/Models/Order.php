@@ -23,6 +23,6 @@ class Order extends Model
 
     public function books()
     {
-        return $this->belongsToMany('App\Models\Book');
+        return $this->belongsToMany('App\Models\Book', 'order_details');
     }
 }
