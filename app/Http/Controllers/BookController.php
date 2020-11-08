@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Repositories\Eloquents\BookRepository;
 use Illuminate\Http\Request;
 
@@ -26,5 +27,14 @@ class BookController extends Controller
         $books = $this->bookRepository->paginationBook();
 
         return view('front_end.product.allBook', compact('books'));
+    }
+
+    public function getBookById($id)
+    {
+        $bookSelected = $this->bookRepository->find($id);
+        $bookByAuthor = $this->bookRepository->getBookByAuthor($bookSelected->author_id, $id);
+        $commentOfBook = $bookSelected->comments;
+        
+        return view('front_end.product.detailBook', compact('bookSelected', 'bookByAuthor', 'commentOfBook'));
     }
 }

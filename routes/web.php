@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+
+
+/**********************Auth*************************************/
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/home', [HomeController::class, 'index'])->name('home.login');
 
@@ -25,15 +28,23 @@ Route::middleware(['auth:sanctum', 'verified'])
 Route::post('/logout', [LoginController::class, 'userLogout'])->name('home.logout');
 
 
+
+
+
+/***********************Home*****************************/
+Route::get('/book', [BookController::class, 'showAllBook'])->name('listBook');
+Route::get('/category/{id}', [HomeController::class, 'getBookOfCategory'])->name('category');
+// Route::get('/test', [HomeController::class, 'test']);
 Route::get('/search', 'HomeController@search')->name('search');
 
 
-/***********************Book*****************************/
-Route::get('/book', [BookController::class, 'showAllBook'])->name('books');
-Route::get('/category/{id}', [HomeController::class, 'getBookOfCategory'])->name('category');
 
+/*************************Book****************************/
+Route::get('/detailBook/{id}', [BookController::class, 'getBookById'])->name('detailBook');
 
-Route::get('/test', [HomeController::class, 'test']);
+// Route::get('/detailBook', function(){
+//     return view('front_end.product.show');
+// });
 
 
 /*********************Login Google************************** */

@@ -31,6 +31,12 @@ class BookRepository extends EloquentRepository implements BookInterface
         return $this->_model->where('category_id', $id)->paginate(self::PAGINATE);
     }
 
+    public function getBookByAuthor($authorId, $currentBookId)
+    {
+        //su dung collection / eloquent
+        return $this->_model->all()->except([$currentBookId])->where('author_id', $authorId);
+    }
+
     public function getBestSellingBook()
     {
 

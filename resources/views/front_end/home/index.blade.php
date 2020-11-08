@@ -52,39 +52,41 @@
         @include('front_end.common.product-card')
     </div>
     <div class="d-flex justify-content-center mt-3">
-        <a href="{{ route('books') }}">{{ trans('common.more') }}</a>
+        <a href="{{ route('listBook') }}">{{ trans('common.more') }}</a>
     </div>
 </div>
 
 <div class="new-arrivals mt-3">
     <h2 class="text-center py-4 m-0 title">{{ trans('common.best_selling_book') }}</h2>
     <div class="row">
-        @foreach($bestSellingBooks as $bestSellingBooks)
+        @foreach($bestSellingBooks as $bestSellingBook)
     <div class="col-lg-2 col-md-4 col-sm-6 col-6 results-row">
         <div class="card card-product mb-1">
-            <a href="#" class="stretched-link">
-                    <img class="card-img" class="w-75" src="{{ asset($bestSellingBooks->book_image) }}" alt="{{  $bestSellingBooks->book_name  }}">
+            <a href= "{{ route('detailBook', ['id' => $bestSellingBook->book_id]) }}" class="stretched-link">
+                <img class="card-img" class="w-75" src="{{ asset($bestSellingBook->book_image) }}" alt="{{  $bestSellingBook->book_name  }}">
             </a>
             <div class="card-body px-0 py-0">
-                <div class="card-text text-dark card-product-name">{{ $bestSellingBooks->book_name}}</div>
+                <div class="card-text text-dark card-product-name">{{ $bestSellingBook->book_name}}</div>
                 
                 <div class="card-text mb-1">
-                    <span class="text-muted">{{  $bestSellingBooks->author_name }}</span>
+                    <span class="text-muted">{{  $bestSellingBook->author_name }}</span>
                 </div>
-                <h5 class="card-text price mb-1">{{  $bestSellingBooks->price  }} VNĐ</h5>
+                <h5 class="card-text price mb-1">{{  $bestSellingBook->price  }} VNĐ</h5>
                 
-                @if($bestSellingBooks->rate == null)
+                @if($bestSellingBook->rate == null)
                 <div class="mb-1">
                     <div>
-                        <p>Không có nhận xét</p>
+                        {{-- <p>(Không có nhận xét)</p> --}}
+                        <p>{{ trans('book.not_review') }}</p>
                     </div>
                 </div>
                 @else
                 <div class="mb-1">
                     <span class="stars-outer">
-                        <div class="stars-inner" style="width: {{  $bestSellingBooks->rate * 10 }}%"></div>
+                        <div class="stars-inner" style="width: {{  $bestSellingBook->rate * 10 }}%"></div>
                     </span>
-                    <p>({{  $bestSellingBooks->numOfCom }} nhận xét)</p>
+                    {{-- <p>({{  $bestSellingBooks->numOfCom }} nhận xét)</p> --}}
+                    <p>({{  $bestSellingBook->numOfCom }} {{ trans('book.review') }})</p>
                 </div>
                 @endif
             </div>
