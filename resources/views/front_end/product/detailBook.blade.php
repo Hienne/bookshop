@@ -40,23 +40,23 @@
 
         {{ Form::open(['class' => 'form-horizontal']) }}
         <div class="form-group row">
-            <label class="col col-md-12 col-form-label text-uppercase">
+            <label class="col-lg-2 col-md-2 col-sm-2 col-form-label text-uppercase">
                 <b>{{ trans('common.number') }}:</b>
             </label>
-            <div class="col col-md-12">
+            <div class="col-lg-10 col-md-10 col-sm-10">
                 <div class="input-group">
-                    <button class="btn btn-secondary" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                    <button type="button" class="btn btn-primary" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                         class="minus decrease"><i class="fas fa-minus"></i></button>
-                        <input class="w-25 quantity d-block form-control" min="0" name="quantity" value="1" type="number">
-                    <button class="btn btn-secondary" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                    class="plus increase"><i class="fas fa-plus-circle"></i></button>
+                    <input class="w-25 quantity d-block form-control" min="0" name="quantity" value="1" type="number">
+                    <button type="button" class="btn btn-primary" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                        class="plus increase"><i class="fas fa-plus-circle"></i></button>
                 </div>
             </div>
         </div>
         <div class="form-group row mb-0">
         <div class="col-md-12">
             {{ Form::hidden('bookId', $bookSelected->id, ['id' => 'bookId']) }}
-            <button type="button" class="btn btn-primary btn-block text-uppercase" id="addToCart">
+            <button type="submit" class="btn btn-primary btn-block text-uppercase" id="addToCart">
                 {{ trans('book.add') }}
             </button>
         </div>
@@ -133,9 +133,15 @@
     </div>
     <div class="col">
         <div class="float-right">
-            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#reviewModal">
-                {{ trans('book.leave_review') }}
-            </button>
+            @guest
+                <a class="btn btn-outline-primary" href="{{ route('login') }}">
+                    {{ trans('book.login_to_review') }}
+                </a>
+            @else
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#reviewModal">
+                    {{ trans('book.leave_review') }}
+                </button>
+            @endguest
         </div>
     </div>
 </div>
@@ -163,15 +169,14 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                {{-- <h5 class="modal-title" id="reviewModalTitle">{{ trans('product.leave_review') }}</h5> --}}
-                <h5 class="modal-title" id="reviewModalTitle">leave review</h5>
+                <h5 class="modal-title" id="reviewModalTitle">{{ trans('book.leave_review') }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                {{-- <form method="POST" action="{{ route('review.store') }}"> --}}
-                <form method="POST" action="#">
+                <form method="POST" action="{{ route('comment.store') }}">
+                {{-- <form method="POST" action="#"> --}}
                     @csrf
                     <div class="rating-stars text-center">
                         <ul id="stars">
@@ -193,14 +198,13 @@
                         </ul>
                         <small class="text-muted text-message"></small>
                     </div>
-                    <input type="hidden" value="0" id="ratingInput" name="rating">
-                    {{-- <input type="hidden" value="{{ $productSelected->id }}" name="product_id"> --}}
-                    <input type="hidden" value="1" name="product_id">
+                    <input type="hidden" value="0" id="ratingInput" name="rate">
+                    <input type="hidden" value="{{ $bookSelected->id }}" name="book_id">
                     <div class="form-group">
                         <input type="text" name="title" class="form-control" placeholder="Enter title" required>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" name="body" rows="3" placeholder="Enter your review"
+                        <textarea class="form-control" name="content" rows="3" placeholder="Enter your review"
                             required></textarea>
                     </div>
                     <div class="float-right">

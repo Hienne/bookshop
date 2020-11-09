@@ -10,4 +10,5 @@ return[
     'average_based_on' => 'trung bình dựa trên',
     'book_des' => 'Mô tả',
     'same_author' => 'Cùng tác giả',
+    'login_to_review' => "Đăng nhập để bình luận",
 ];

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -41,12 +42,20 @@ Route::get('/search', 'HomeController@search')->name('search');
 
 /*************************Book****************************/
 Route::get('/detailBook/{id}', [BookController::class, 'getBookById'])->name('detailBook');
+// Route::get('/detailBook/{id}', [BookController::class, 'getBookById'])
+//     ->middleware('auth')
+//     ->name('detailBook');
 
 // Route::get('/detailBook', function(){
 //     return view('front_end.product.show');
 // });
 
 
+Route::post('/review', [CommentController::class, 'store'])->name('comment.store');
+
 /*********************Login Google************************** */
 Route::get('/redirect', [LoginController::class, 'redirectToProvider'])->name('loginWithGG');
 Route::get('/callback', [LoginController::class, 'handleProviderCallback']);
+
+
+
