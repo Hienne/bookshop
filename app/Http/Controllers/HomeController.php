@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\Eloquents\BookRepository;
 use App\Repositories\Eloquents\AuthorRepository;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -68,6 +69,21 @@ class HomeController extends Controller
     //         echo '<br>';
     //     }
     // }
+
+    public function changeLanguage($language, Request $request)
+    {
+        $lang = $request->language;
+        $language = config('app.locale');
+        if($lang == 'en') {
+            $language = 'en';
+        }
+        if($lang == 'vi') {
+            $language = 'vi';
+        }
+
+        Session::put('language', $language);
+        return redirect()->back();
+    }
 
     public function search()
     {

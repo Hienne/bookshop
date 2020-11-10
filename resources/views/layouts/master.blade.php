@@ -13,12 +13,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/user.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/common.css') }}">
 
-    {{-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> --}}
-
 
     <!-- Title -->
     <title>@yield('title')</title>

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\App;
 
 class AuthorRepository extends EloquentRepository implements AuthorInterface
 {
-    const NUMOFAUTHOR = 8;
+    const NUMOFAUTHOR = 5;
     
     public function getModel()
     {

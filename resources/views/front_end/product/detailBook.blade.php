@@ -176,7 +176,6 @@
             </div>
             <div class="modal-body">
                 <form method="POST" action="{{ route('comment.store') }}">
-                {{-- <form method="POST" action="#"> --}}
                     @csrf
                     <div class="rating-stars text-center">
                         <ul id="stars">

@@ -60,12 +60,12 @@
     <h2 class="text-center py-4 m-0 title">{{ trans('common.best_selling_book') }}</h2>
     <div class="row">
         @foreach($bestSellingBooks as $bestSellingBook)
-    <div class="col-lg-2 col-md-4 col-sm-6 col-6 results-row">
+    <div class="col-lg-2 col-md-4 col-sm-6 col-6 results-row px-0">
         <div class="card card-product mb-1">
             <a href= "{{ route('detailBook', ['id' => $bestSellingBook->book_id]) }}" class="stretched-link">
                 <img class="card-img" class="w-75" src="{{ asset($bestSellingBook->book_image) }}" alt="{{  $bestSellingBook->book_name  }}">
             </a>
-            <div class="card-body px-0 py-0">
+            <div class="card-body px-3 py-0">
                 <div class="card-text text-dark card-product-name">{{ $bestSellingBook->book_name}}</div>
                 
                 <div class="card-text mb-1">
@@ -76,8 +76,10 @@
                 @if($bestSellingBook->rate == null)
                 <div class="mb-1">
                     <div>
-                        {{-- <p>(Không có nhận xét)</p> --}}
-                        <p>{{ trans('book.not_review') }}</p>
+                        <span class="stars-outer">
+                            <div class="stars-inner" style="width: 0%"></div>
+                        </span>
+                        <p>({{ trans('book.not_review') }})</p>
                     </div>
                 </div>
                 @else
@@ -85,7 +87,6 @@
                     <span class="stars-outer">
                         <div class="stars-inner" style="width: {{  $bestSellingBook->rate * 10 }}%"></div>
                     </span>
-                    {{-- <p>({{  $bestSellingBooks->numOfCom }} nhận xét)</p> --}}
                     <p>({{  $bestSellingBook->numOfCom }} {{ trans('book.review') }})</p>
                 </div>
                 @endif
@@ -96,92 +97,13 @@
     </div>
 </div>
 
-<div class="mt-5">
+<div class="mt-3">
     <h2 class="text-center py-4 m-0 title">{{ trans('common.authors') }}</h2>
     
-    {{-- @include('front_end.author.author_card') --}}
-<div class="container">
-    <div class="your-class row">
-        <div class="col-md-12">
-            <img src="{{ asset('./storage/author/A_J Hoge.jpg') }}" 
-                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
-                            class="rounded-circle d-block w-100" alt="...">
-        </div>
-        <div class="col-md-12">
-            <img src="{{ asset('./storage/author/adam-khoo.jpg') }}" 
-                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
-                            class="rounded-circle d-block w-100" alt="...">
-        </div>
-        <div class="col-md-12">
-            <img src="{{ asset('./storage/author/agatha_christie.jpg') }}" 
-                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
-                            class="rounded-circle d-block w-100" alt="...">
-        </div>
-        <div class="col-md-12">
-            <img src="{{ asset('./storage/author/A_J Hoge.jpg') }}" 
-                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
-                            class="rounded-circle d-block w-100" alt="...">
-        </div>
-        <div class="col-md-12">
-            <img src="{{ asset('./storage/author/A_J Hoge.jpg') }}" 
-                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
-                            class="rounded-circle d-block w-100" alt="...">
-        </div>
-        <div class="col-md-12">
-            <img src="{{ asset('./storage/author/A_J Hoge.jpg') }}" 
-                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
-                            class="rounded-circle d-block w-100" alt="...">
-        </div>
-        <div class="col-md-12">
-            <img src="{{ asset('./storage/author/A_J Hoge.jpg') }}" 
-                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
-                            class="rounded-circle d-block w-100" alt="...">
-        </div>
-        <div class="col-md-12">
-            <img src="{{ asset('./storage/author/A_J Hoge.jpg') }}" 
-                            style="border: #e4d4be 4px solid; width: 200px; height: 200px;" 
-                            class="rounded-circle d-block w-100" alt="...">
-        </div>
+    <div class="container">
+        @include('front_end.author.author_card')
     </div>
-</div>
+    
 </div>
 
-@endsection
-
-@section('script')
-    <script type="text/javascript">
-        $('.your-class').slick({
-            dots: true,
-            arrows: true,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 5,
-            slidesToScroll: 1,
-            responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
-        })
-  </script>
 @endsection

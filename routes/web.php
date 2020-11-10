@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/change_language/{language}', [HomeController::class, 'changeLanguage'])->middleware('localization')->name('change_language');
+
 
 
 /**********************Auth*************************************/

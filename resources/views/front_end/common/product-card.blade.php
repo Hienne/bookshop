@@ -4,12 +4,12 @@
 </div>
 @else
 @foreach($books as $book)
-    <div class="col-lg-2 col-md-4 col-sm-6 col-6 results-row">
+    <div class="col-lg-2 col-md-4 col-sm-6 col-6 results-row px-0">
         <div class="card card-product mb-1">
             <a href="{{ route('detailBook', ['id' => $book->id])  }}" class="stretched-link">
                     <img class="card-img" class="w-75" src="{{ asset($book->book_image) }}" alt="{{  $book->book_name  }}">
             </a>
-            <div class="card-body px-0 py-0">
+            <div class="card-body px-3 py-0">
                 <div class="card-text text-dark card-product-name">{{ $book->book_name}}</div>
                 
                 <div class="card-text mb-1">
@@ -19,9 +19,10 @@
                 
                 @if($book->comments->isEmpty())
                 <div class="mb-1">
-                    <div>
-                        <p>{{ trans('book.not_review') }}</p>
-                    </div>
+                    <span class="stars-outer">
+                        <div class="stars-inner" style="width: 0.%"></div>
+                    </span>
+                    <p>({{ trans('book.not_review') }})</p>
                 </div>
                 @else
                 <div class="mb-1">

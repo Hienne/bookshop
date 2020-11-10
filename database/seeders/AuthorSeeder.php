@@ -17,7 +17,7 @@ class AuthorSeeder extends Seeder
         DB::table('authors')->insert([
             [ 
                 'author_name' => '2.1/2 Bạn Tốt',
-                'author_image' => null,
+                'author_image' => '/storage/author/avatar.jpg',
             ],
             [ 
                 'author_name' => 'A.J.Hoge',
@@ -25,11 +25,11 @@ class AuthorSeeder extends Seeder
             ],
             [ 
                 'author_name' => 'Accototo',
-                'author_image' => null
+                'author_image' => '/storage/author/avatar.jpg'
             ],
             [ 
                 'author_name' => 'Adam Khoo & Gary Lee',
-                'author_image' => null
+                'author_image' => '/storage/author/avatar.jpg'
             ],
             [ 
                 'author_name' => 'Adam Khoo',
@@ -57,11 +57,11 @@ class AuthorSeeder extends Seeder
             ],
             [ 
                 'author_name' => 'Allan & Barbara Pease',
-                'author_image' => null
+                'author_image' => '/storage/author/avatar.jpg'
             ],
             [ 
                 'author_name' => 'Alphabooks biên soạn',
-                'author_image' => null
+                'author_image' => '/storage/author/avatar.jpg'
             ],
             [ 
                 'author_name' => 'Anagarika Govinda',
@@ -73,19 +73,19 @@ class AuthorSeeder extends Seeder
             ],
             [ 
                 'author_name' => 'Andrew Spooner',
-                'author_image' => null
+                'author_image' => '/storage/author/avatar.jpg'
             ],
             [ 
                 'author_name' => 'Anh Nguyễn',
-                'author_image' => null
+                'author_image' => '/storage/author/avatar.jpg'
             ],
             [ 
                 'author_name' => 'Anh Thư - Thu Giang',
-                'author_image' => null
+                'author_image' => '/storage/author/avatar.jpg'
             ],
             [ 
                 'author_name' => 'Ann Weil',
-                'author_image' => null
+                'author_image' => '/storage/author/avatar.jpg'
             ],
             [ 
                 'author_name' => 'Anthony Robbins',

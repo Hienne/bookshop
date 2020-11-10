@@ -31,11 +31,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        {{ trans('common.best_selling') }}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
                         {{ trans('common.promotion') }}
                     </a>
                 </li>
@@ -65,10 +60,10 @@
                         <i class="fas fa-globe-asia"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{ route('change_language', ['language'=>'en']) }}">
                             {{ trans('common.en') }}
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{ route('change_language', ['language'=>'vi']) }}">
                             {{ trans('common.vi') }}
                         </a>
                     </div>
