@@ -18,17 +18,9 @@ class Localization
      */
     public function handle(Request $request, Closure $next)
     {
-        $language = Session::get('language', config('app.locale'));
-        switch($language) {
-            case 'en':
-                $language = 'en';
-                break;
-            default:
-                $language = 'vi';
-                break;
-        }
+        $language = $request->session()->get('language', config('app.locale'));
 
-        App::setlocale($language);
+        App::setLocale($language);
 
         return $next($request);
     }

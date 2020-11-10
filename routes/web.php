@@ -17,47 +17,52 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => 'localization'], function() {        
+    Route::get('/change_language/{language}', [HomeController::class, 'changeLanguage'])->name('change_language');
 
-Route::get('/change_language/{language}', [HomeController::class, 'changeLanguage'])->middleware('localization')->name('change_language');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
-
-
-/**********************Auth*************************************/
-Route::middleware(['auth:sanctum', 'verified'])
+    /**********************Auth*************************************/
+    Route::middleware(['auth:sanctum', 'verified'])
     ->get('/home', [HomeController::class, 'index'])->name('home.login');
 
 
-Route::post('/logout', [LoginController::class, 'userLogout'])->name('home.logout');
+    Route::post('/logout', [LoginController::class, 'userLogout'])->name('home.logout');
 
 
 
 
 
-/***********************Home*****************************/
-Route::get('/book', [BookController::class, 'showAllBook'])->name('listBook');
-Route::get('/category/{id}', [HomeController::class, 'getBookOfCategory'])->name('category');
-// Route::get('/test', [HomeController::class, 'test']);
-Route::get('/search', 'HomeController@search')->name('search');
+    /***********************Home*****************************/
+    Route::get('/book', [BookController::class, 'showAllBook'])->name('listBook');
+    Route::get('/category/{id}', [HomeController::class, 'getBookOfCategory'])->name('category');
+    // Route::get('/test', [HomeController::class, 'test']);
+    Route::get('/search', 'HomeController@search')->name('search');
 
 
 
-/*************************Book****************************/
-Route::get('/detailBook/{id}', [BookController::class, 'getBookById'])->name('detailBook');
-// Route::get('/detailBook/{id}', [BookController::class, 'getBookById'])
-//     ->middleware('auth')
-//     ->name('detailBook');
+    /*************************Book****************************/
+    Route::get('/detailBook/{id}', [BookController::class, 'getBookById'])->name('detailBook');
+    // Route::get('/detailBook/{id}', [BookController::class, 'getBookById'])
+    //     ->middleware('auth')
+    //     ->name('detailBook');
 
-// Route::get('/detailBook', function(){
-//     return view('front_end.product.show');
-// });
+    // Route::get('/detailBook', function(){
+    //     return view('front_end.product.show');
+    // });
 
 
-Route::post('/review', [CommentController::class, 'store'])->name('comment.store');
+    Route::post('/review', [CommentController::class, 'store'])->name('comment.store');
 
-/*********************Login Google************************** */
-Route::get('/redirect', [LoginController::class, 'redirectToProvider'])->name('loginWithGG');
-Route::get('/callback', [LoginController::class, 'handleProviderCallback']);
+    /*********************Login Google************************** */
+    Route::get('/redirect', [LoginController::class, 'redirectToProvider'])->name('loginWithGG');
+    Route::get('/callback', [LoginController::class, 'handleProviderCallback']);
+});
+
+
+
+
+
 
 
 
