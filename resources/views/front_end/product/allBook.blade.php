@@ -3,7 +3,7 @@
 @section('title', trans('common.list_book'))
 
 @section('content')
-<div class="new-arrivals mt-3">
+<div class="mt-3">
     <h2 class="text-center py-4 m-0 title">{{ trans('common.books') }}</h2>
     <div class="row">
         @include('front_end.common.product-card')

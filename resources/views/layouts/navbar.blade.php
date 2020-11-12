@@ -50,8 +50,12 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="cart-qty" href="#">
-                        <i class="fas fa-shopping-cart"></i> 2
+                    <a class="nav-link" id="cart-qty" href="{{ route('cart') }}">
+                        @if (Session::has('cart'))
+                            <i class="fas fa-shopping-cart"></i> {{ Session::get('cart')->totalQty }}    
+                        @else
+                            <i class="fas fa-shopping-cart"></i>
+                        @endif
                     </a>
                 </li>
                 <li class="nav-item dropdown">

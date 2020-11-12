@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('title', $bookSelected->name)
-@section('title', 'product')
 
 @section('content')
 <!-- Portfolio Item Row -->
@@ -38,37 +37,36 @@
             </tr>
         </table>
 
-        {{ Form::open(['class' => 'form-horizontal']) }}
+        {{-- {{ Form::open(['class' => 'form-horizontal']) }} --}}
+        {{  Form::open(['method' => 'POST', 'route' => ['cart.add']])  }}
         <div class="form-group row">
-            <label class="col-lg-2 col-md-2 col-sm-2 col-form-label text-uppercase">
+            <label class="col-lg-3 col-md-3 col-sm-3 col-form-label text-uppercase">
                 <b>{{ trans('common.number') }}:</b>
             </label>
-            <div class="col-lg-10 col-md-10 col-sm-10">
+            <div class="col-lg-9 col-md-9 col-sm-9">
                 <div class="input-group">
                     <button type="button" class="btn btn-primary" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                         class="minus decrease"><i class="fas fa-minus"></i></button>
-                    <input class="w-25 quantity d-block form-control" min="0" name="quantity" value="1" type="number">
+                    <input class="w-25 quantity d-block form-control" min="0" name="qty" id="qty" value="1" type="number">
                     <button type="button" class="btn btn-primary" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                         class="plus increase"><i class="fas fa-plus-circle"></i></button>
                 </div>
             </div>
         </div>
-        <div class="form-group row mb-0">
-        <div class="col-md-12">
+        <div class="d-flex justify-content-center">
             {{ Form::hidden('bookId', $bookSelected->id, ['id' => 'bookId']) }}
-            <button type="submit" class="btn btn-primary btn-block text-uppercase" id="addToCart">
+            <button type="submit" class="btn btn-primary text-uppercase" id="addToCart">
                 {{ trans('book.add') }}
             </button>
         </div>
+        {{ Form::close() }}
     </div>
-    {{ Form::close() }}
 </div>
-</div>
-<!-- Products Suggestion Row -->
-<div class="new-arrivals mt-3">
-    <h2 class="text-center py-4 m-0 title">{{ trans('book.same_author') }}</h2>
+<!-- Same Author Book Row -->
+@if ($bookByAuthor->count('id') > 0)
+<div class="mt-4">
+    <h2 class="text-center title border-bottom">{{ trans('book.same_author') }}</h2>
     <div class="row">
-        {{-- @include('front_end.common.product-card') --}}
         @foreach ($bookByAuthor as $book)
             <div class="col-lg-2 col-md-4 col-sm-6 col-6 results-row">
                 <div class="card card-product mb-1">
@@ -103,17 +101,19 @@
         @endforeach
     </div>
 </div>
+@endif
+
 
 {{-- book description --}}
 <div>
-    <h3 class="title text-center mt-4">{{ trans('book.book_des') }}</h3>
+    <h3 class="title text-center mt-4 border-bottom">{{ trans('book.book_des') }}</h3>
     {!! html_entity_decode($bookSelected->description) !!}
 </div>
 
 <!-- Reviews -->
-<div class="row mt-5" id="review">
+<div class="row mt-3" id="review">
     <div class="col-md-12 my-4 text-center">
-        <h3 class="title">{{ trans('book.review_title') }}</h3>
+        <h3 class="title border-bottom">{{ trans('book.review_title') }}</h3>
     </div>
 </div>
 
@@ -219,25 +219,28 @@
 @section('script')
 <!-- Add to cart using ajax -->
 {{-- <script type="text/javascript">
-    var cart = {{ Cart::count() }};
+    if(Session::has('cart')) {
+        var cart = Session::get('cart')->totalQty;
+    }
+    else {
+        var cart = 0;
+    }
     var text = '<i class="fas fa-shopping-cart"></i>';
-    jQuery(document).ready(function () {
-        jQuery('#addToCart').click(function (e) {
+    $(document).ready(function () {
+        $('#addToCart').click(function (e) {
             e.preventDefault();
-            var qty = parseInt(jQuery('#qty').val());
+            var qty = parseInt($('#qty').val());
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            jQuery.ajax({
+            $.ajax({
                 url: "{{ route('cart.add') }}",
                 method: 'POST',
                 data: {
-                    color: jQuery('#color').val(),
-                    size: jQuery('#size').val(),
-                    qty: jQuery('#qty').val(),
-                    productId: jQuery('#productId').val(),
+                    qty: $('#qty').val(),
+                    bookId: $('#bookId').val(),
                 },
                 success: function () {
                     $("#cart-qty").html(text + ' ' + (cart += qty));

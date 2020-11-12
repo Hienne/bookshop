@@ -10,6 +10,17 @@ return [
     'remove' => 'Remove', 
     'total' => 'Total',
     'ship_address' => 'Ship address',
-    'login' => 'Login',
     
+    'cart' => 'Cart',
+    'price' => 'Price',
+    'name' => 'Name',
+    'email' => 'Email',
+    'phone' => 'Phone',
+    'address' => 'Address',
+    'edit' => 'Edit',
+    'payment' => 'Payment',
+    'items_on_cart' => 'Items on cart',
+    'payment_method' => 'Payment method',
+    'payment_on_delivery' => 'Payment on delivery',
+    'checkout' => 'Checkout',
 ];

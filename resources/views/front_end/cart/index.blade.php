@@ -6,10 +6,10 @@
 <div class="card my-4">
     <div class="card-body">
         <h3 class="card-title">{{ trans('cart.detail') }}</h3>
-        {{-- @if (Cart::count() == 0) --}}
-        {{-- <p class="card-text">{{ trans('cart.empty') }} <a href="#"
-                class="card-link">{{ trans('cart.shopping') }}</a></p> --}}
-        {{-- @else --}}
+        @if (Session::get('cart')->totalQty == 0)
+        <p class="card-text">{{ trans('cart.empty') }} <a href="#"
+                class="card-link">{{ trans('cart.shopping') }}</a></p>
+        @else
         <div class="table-responsive text-center">
             <table class="table">
                 <thead>
@@ -23,71 +23,32 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{ Form::open(['class' => 'form-horizontal']) }}
+                    @foreach ($books as $book)
+                    {{-- {{ Form::open(['class' => 'form-horizontal']) }} --}}
+                    {{  Form::open(['method' => 'DELETE', 'route' => ['cart.delete', $book['item']->id]])  }}
                     <tr>
                         <td>
-                            <img src="./storage/anh_bia/_ng_m_n.jpg" width="50" height="50" alt="Image">
+                            <img src="{{ asset($book['item']->book_image) }}" width="50" height="50" alt="Image">
                         </td>
-                        <td>
-                            <a href="#">tên sách</a>
+                        <td style="width: 400px">
+                            <a href="{{ route('detailBook', ['id'=>$book['item']->id]) }}">{{ $book['item']->book_name }}</a>
                         </td>
-                        <td>$giá tiền</td>
+                        <td>{{ $book['price'] }} VND</td>
                         <td>
-                            {{ Form::hidden('rowId', 1, ['id' => 'rowId' . 1]) }}
-                            {{ Form::number('qty', 2, ['class' => 'form-control form-control-sm text-center w-50 mx-auto', 'min' => '1', 'max' => '10', 'id' => 'qty' . 1]) }}
+                            {{ Form::hidden('bookId', $book['item']->id, ['id' => $book['item']->id]) }}
+                            {{ Form::number('qty', $book['qty'], ['class' => 'form-control form-control-sm text-center w-50 mx-auto', 'min' => '1', 'max' => '10', 'id' => 'qty' . $book['item']->id]) }}
                         </td>
-                        <td>$tong tien</td>
+                        <td>{{ ($book['price']) * ($book['qty']) }} VND</td>
                         <td>
-                            <a id="remove2" href="#"><i class="fas fa-times"></i></a>
+                            <a type="submit" id="remove{{ $book['item']->id }}" href="#"><i class="fas fa-times"></i></a>
                         </td>
                     </tr>
                     {{ Form::close() }}
-
-                    {{ Form::open(['class' => 'form-horizontal']) }}
-                    <tr>
-                        <td>
-                            <img src="./storage/anh_bia/_ng_m_n.jpg" width="50" height="50" alt="Image">
-                        </td>
-                        <td>
-                            <a href="#">tên sách</a>
-                        </td>
-                        <td>$giá tiền</td>
-                        <td>
-                            {{ Form::hidden('rowId', 1, ['id' => 'rowId' . 1]) }}
-                            {{ Form::number('qty', 2, ['class' => 'form-control form-control-sm text-center w-50 mx-auto', 'min' => '1', 'max' => '10', 'id' => 'qty' . 1]) }}
-                        </td>
-                        <td>$tong tien</td>
-                        <td>
-                            <a id="remove2" href="#"><i class="fas fa-times"></i></a>
-                        </td>
-                    </tr>
-                    {{ Form::close() }}
-                    
-                    {{-- @foreach ($items as $item)
-                    {{ Form::open(['class' => 'form-horizontal']) }}
-                    <tr>
-                        <td>
-                            <img src="{{ asset($item->options->image[0]) }}" width="50" height="50" alt="Image">
-                        </td>
-                        <td>
-                            <a href="{{ route('product.show', $item->id) }}">{{ $item->name }}</a>
-                        </td>
-                        <td>${{ $item->price }}</td>
-                        <td>
-                            {{ Form::hidden('rowId', $item->rowId, ['id' => 'rowId' . $item->id]) }}
-                            {{ Form::number('qty', $item->qty, ['class' => 'form-control form-control-sm text-center w-50 mx-auto', 'min' => '1', 'max' => '10', 'id' => 'qty' . $item->id]) }}
-                        </td>
-                        <td>${{ ($item->price) * ($item->qty) }}</td>
-                        <td>
-                            <a id="remove{{ $item->id }}" href="#"><i class="fas fa-times"></i></a>
-                        </td>
-                    </tr>
-                    {{ Form::close() }}
-                    @endforeach --}}
+                    @endforeach
                 </tbody>
             </table>
         </div>
-        {{-- @endif --}}
+        @endif
     </div>
 </div>
 <div class="card-deck">
@@ -102,7 +63,7 @@
                 <tbody>
                     <tr>
                         <th scope="row">{{ trans('cart.name') }}</th>
-                        <td class="text-right">{{ Auth::user()->profile->full_name }}</td>
+                        <td class="text-right">{{ Auth::user()->name }}</td>
                     </tr>
                     <tr>
                         <th scope="row">{{ trans('cart.email') }}</th>
@@ -110,11 +71,11 @@
                     </tr>
                     <tr>
                         <th scope="row">{{ trans('cart.phone') }}</th>
-                        <td class="text-right">{{ Auth::user()->profile->phone }}</td>
+                        <td class="text-right">{{ Auth::user()->phone }}</td>
                     </tr>
                     <tr>
                         <th scope="row">{{ trans('cart.address') }}</th>
-                        <td class="text-right">{{ Auth::user()->profile->address }}</td>
+                        <td class="text-right">{{ Auth::user()->address }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -132,14 +93,11 @@
                 <tbody>
                     <tr>
                         <th scope="row">{{ trans('cart.items_on_cart') }}</th>
-                        {{-- <td class="text-right">{{ Cart::count() }}</td> --}}
-                        <td class="text-right">Cart count</td>
+                        <td class="text-right">{{ $totalQty }}</td>
                     </tr>
                     <tr>
                         <th scope="row">{{ trans('cart.total') }}</th>
-                        {{-- <td class="text-right">${{ Cart::total() }}</td> --}}
-                        <td class="text-right">Cart::total()</td>
-
+                        <td class="text-right">{{ $totalPri }} VND</td>
                     </tr>
                     <tr>
                         <th scope="row">{{ trans('cart.payment_method') }}</th>
@@ -151,35 +109,34 @@
                     </tr>
                 </tbody>
             </table>
-            {{-- <div class="text-right">
+            <div class="text-right">
                 @if (Cart::count() !== 0)
                 <a href="{{ route('checkout') }}" class="btn btn-primary">{{ trans('cart.checkout') }}</a>
                 @endif
-            </div> --}}
+            </div>
         </div>
     </div>
 </div>
 @endsection
-
 @section('script')
 <!-- Remove item using Ajax -->
-{{-- <script type="text/javascript">
-    jQuery(document).ready(function () {
-        @foreach($items as $item)
-        jQuery('#remove{{ $item->id }}').click(function (e) {
+<script type="text/javascript">
+    $(document).ready(function () {
+        @foreach($books as $book)
+        $("#remove{{ $book['item']->id }}").click(function (e) {
             e.preventDefault();
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            jQuery.ajax({
-                url: "{{ route('cart.remove', $item->rowId) }}",
+            $.ajax({
+                url: "{{ route('cart.delete', $book['item']->id) }}",
                 method: 'POST',
                 data: {
                     _method: 'DELETE'
                 },
-                success: function () {
+                done: function () {
                     location.reload();
                 },
             });
@@ -188,7 +145,7 @@
     });
 </script>
 <!-- Update item using Ajax -->
-<script type="text/javascript">
+{{-- <script type="text/javascript">
     jQuery(document).ready(function () {
         @foreach($items as $item)
         jQuery('#qty{{ $item->id }}').change(function (e) {
