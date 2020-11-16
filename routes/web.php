@@ -5,6 +5,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SocialController;
 use App\Repositories\Eloquents\CartRepository;
 use Illuminate\Support\Facades\Route;
 
@@ -36,21 +37,29 @@ Route::group(['middleware' => 'localization'], function() {
     Route::prefix('cart')->group(function() {
         Route::get('/', [CartController::class, 'index'])->name('cart');
         Route::post('/add', [CartController::class, 'addToCart'])->name('cart.add');
-        Route::delete('/delete/{$bookId}', [CartController::class, 'deleteOnCart'])->name('cart.delete');
+        Route::delete('/delete/{bookId}', [CartController::class, 'deleteOnCart'])->name('cart.delete');
+        Route::put('/update', [CartController::class, 'updateOnCart'])->name('cart.update');
+        Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
     });
+
+    Route::get('/redirect/{provider}', [SocialController::class, 'redirect'])->name('login.facebook');
+    Route::get('/callback/{provider}', [SocialController::class, 'callback']);
     
 
 
 
     /***********************Home*****************************/
-    Route::get('/book', [BookController::class, 'showAllBook'])->name('listBook');
     Route::get('/category/{id}', [HomeController::class, 'getBookOfCategory'])->name('category');
-    Route::get('/search', 'HomeController@search')->name('search');
+    Route::get('/search', [HomeController::class, 'searchBook'])->name('home.search');
 
 
 
     /*************************Book****************************/
-    Route::get('/detailBook/{id}', [BookController::class, 'getBookById'])->name('detailBook');
+    Route::prefix('book')->group(function() {
+        Route::get('/', [BookController::class, 'showAllBook'])->name('listBook');
+        Route::get('/detail/{id}', [BookController::class, 'getBookById'])->name('detailBook');
+    });
+    
     // Route::get('/detailBook/{id}', [BookController::class, 'getBookById'])
     //     ->middleware('auth')
     //     ->name('detailBook');

@@ -7,14 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $table = 'orders';
+    const PENDING = 'Đang xử lý đơn hàng';
 
-    public $timestamps = true;
-
-    public function payment() 
-    {
-        return $this->hasOne('App\Models\Payment');
-    }
+    protected $fillable = [
+        'order_status',
+        'shipping_address',
+        'phoneReceiver',
+        'nameReceiver',
+        'shipping_fee'
+    ];
 
     public function user()
     {

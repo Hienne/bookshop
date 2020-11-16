@@ -31,4 +31,8 @@ return [
     'authors' => 'Authors',
     'list_book' => 'List Book',
     'best_selling_book' => 'Best selling books',
+    'search' => 'Search',
+    'search_result' => "Search for ':keyword'",
+    'top_results' => "Top :books results",
+    'empty' => 'There is no item',
 ];

@@ -20,7 +20,6 @@ class OrderSeeder extends Seeder
 		         	[
 		         		[
 				            'user_id' => rand(1, 4),
-				            'payment_id' => $i,
 				            'order_status' => 'Đang xử lý đơn hàng',
 				            'shipping_address' => 'Nhà số '.$i.' Cầu Giấy, Hà Nội',
 				            'phoneReceiver' =>'09000'.rand(0,10).rand(0,10).rand(0,10).rand(0,10).rand(0,10),

@@ -6,8 +6,8 @@
 <div class="card my-4">
     <div class="card-body">
         <h3 class="card-title">{{ trans('cart.detail') }}</h3>
-        @if (Session::get('cart')->totalQty == 0)
-        <p class="card-text">{{ trans('cart.empty') }} <a href="#"
+        @if ($totalQty == 0)
+        <p class="card-text">{{ trans('cart.empty') }} <a href="{{ route('home') }}"
                 class="card-link">{{ trans('cart.shopping') }}</a></p>
         @else
         <div class="table-responsive text-center">
@@ -24,8 +24,7 @@
                 </thead>
                 <tbody>
                     @foreach ($books as $book)
-                    {{-- {{ Form::open(['class' => 'form-horizontal']) }} --}}
-                    {{  Form::open(['method' => 'DELETE', 'route' => ['cart.delete', $book['item']->id]])  }}
+                    {{ Form::open(['class' => 'form-horizontal']) }}
                     <tr>
                         <td>
                             <img src="{{ asset($book['item']->book_image) }}" width="50" height="50" alt="Image">
@@ -33,14 +32,14 @@
                         <td style="width: 400px">
                             <a href="{{ route('detailBook', ['id'=>$book['item']->id]) }}">{{ $book['item']->book_name }}</a>
                         </td>
-                        <td>{{ $book['price'] }} VND</td>
+                        <td>{{ $book['item']->price }} VND</td>
                         <td>
-                            {{ Form::hidden('bookId', $book['item']->id, ['id' => $book['item']->id]) }}
+                            {{ Form::hidden('bookId', $book['item']->id, ['id' => 'bookId' . $book['item']->id]) }}
                             {{ Form::number('qty', $book['qty'], ['class' => 'form-control form-control-sm text-center w-50 mx-auto', 'min' => '1', 'max' => '10', 'id' => 'qty' . $book['item']->id]) }}
                         </td>
-                        <td>{{ ($book['price']) * ($book['qty']) }} VND</td>
+                        <td>{{ ($book['price']) }} VND</td>
                         <td>
-                            <a type="submit" id="remove{{ $book['item']->id }}" href="#"><i class="fas fa-times"></i></a>
+                            <a id="remove{{ $book['item']->id }}" href="#"><i class="fas fa-times"></i></a>
                         </td>
                     </tr>
                     {{ Form::close() }}
@@ -66,10 +65,6 @@
                         <td class="text-right">{{ Auth::user()->name }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">{{ trans('cart.email') }}</th>
-                        <td class="text-right">{{ Auth::user()->email }}</td>
-                    </tr>
-                    <tr>
                         <th scope="row">{{ trans('cart.phone') }}</th>
                         <td class="text-right">{{ Auth::user()->phone }}</td>
                     </tr>
@@ -80,7 +75,7 @@
                 </tbody>
             </table>
             <div class="text-right">
-                <a href="{{ route('user.edit', Auth::user()->id) }}"
+                <a href="#"
                     class="btn btn-primary">{{ trans('cart.edit') }}</a>
             </div>
             @endguest
@@ -96,8 +91,12 @@
                         <td class="text-right">{{ $totalQty }}</td>
                     </tr>
                     <tr>
+                        <th scope="row">{{ trans('cart.shipping_fee') }}</th>
+                        <td class="text-right">30000 VND</td>
+                    </tr>
+                    <tr>
                         <th scope="row">{{ trans('cart.total') }}</th>
-                        <td class="text-right">{{ $totalPri }} VND</td>
+                        <td class="text-right">{{ $totalPri + 30000 }} VND</td>
                     </tr>
                     <tr>
                         <th scope="row">{{ trans('cart.payment_method') }}</th>
@@ -110,8 +109,8 @@
                 </tbody>
             </table>
             <div class="text-right">
-                @if (Cart::count() !== 0)
-                <a href="{{ route('checkout') }}" class="btn btn-primary">{{ trans('cart.checkout') }}</a>
+                @if ($totalQty !== 0)
+                <a href="{{ route('cart.checkout') }}" class="btn btn-primary">{{ trans('cart.checkout') }}</a>
                 @endif
             </div>
         </div>
@@ -122,8 +121,39 @@
 <!-- Remove item using Ajax -->
 <script type="text/javascript">
     $(document).ready(function () {
-        @foreach($books as $book)
-        $("#remove{{ $book['item']->id }}").click(function (e) {
+        if({{ $totalQty !== 0 }})
+        {
+            @foreach($books as $book) 
+            $("#remove{{ $book['item']->id }}").click(function (e) {
+                e.preventDefault();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    url: "{{ route('cart.delete', $book['item']->id) }}",
+                    method: 'POST',
+                    data: {
+                        _method: 'DELETE'
+                    },
+                    success: function () {
+                        location.reload();
+                    },
+                
+                });
+            });
+        @endforeach
+        }
+    });
+</script>
+<!-- Update item using Ajax -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        if({{ $totalQty }} != 0)
+        {
+            @foreach($books as $book)
+        $('#qty{{ $book["item"]->id }}').change(function (e) {
             e.preventDefault();
             $.ajaxSetup({
                 headers: {
@@ -131,37 +161,12 @@
                 }
             });
             $.ajax({
-                url: "{{ route('cart.delete', $book['item']->id) }}",
-                method: 'POST',
-                data: {
-                    _method: 'DELETE'
-                },
-                done: function () {
-                    location.reload();
-                },
-            });
-        });
-        @endforeach
-    });
-</script>
-<!-- Update item using Ajax -->
-{{-- <script type="text/javascript">
-    jQuery(document).ready(function () {
-        @foreach($items as $item)
-        jQuery('#qty{{ $item->id }}').change(function (e) {
-            e.preventDefault();
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            jQuery.ajax({
                 url: "{{ route('cart.update') }}",
                 method: 'POST',
                 data: {
                     _method: 'PUT',
-                    rowId: jQuery('#rowId{{ $item->id }}').val(),
-                    qty: jQuery('#qty{{ $item->id }}').val(),
+                    bookId: $('#bookId{{ $book["item"]->id }}').val(),
+                    qty: $('#qty{{ $book["item"]->id }}').val(),
                 },
                 success: function () {
                     location.reload();
@@ -169,6 +174,7 @@
             });
         });
         @endforeach
+        }
     });
-</script> --}}
+</script>
 @endsection

@@ -11,4 +11,5 @@ return[
     'book_des' => 'Book Description',
     'same_author' => 'Books with The Same Author',
     'login_to_review' => "Login to review",
+    'post' => 'Post',
 ];

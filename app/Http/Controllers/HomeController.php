@@ -40,37 +40,7 @@ class HomeController extends Controller
         return view('front_end.product.allBook', compact('books'));
     }
 
-    // public function test()
-    // {
-
-    //     $books = Book::join('order_details', 'books.id', '=', 'order_details.book_id')
-    //         ->join('authors', 'books.author_id', '=', 'authors.id')
-    //         ->join('comments', 'books.id', '=', 'comments.book_id')
-    //         ->select( 'authors.author_name', 'books.book_name', 'books.book_image', 'books.price',
-    //                     'order_details.book_id', DB::raw('sum(quality) as quality'),
-    //                     DB::raw('count(comments.book_id) as numOfCom'), DB::raw('avg(comments.rate) as rate') 
-    //                     )
-    //         ->groupBy('order_details.book_id', 'books.book_image','books.book_name', 
-    //                     'authors.author_name', 'books.price', 'comments.id', 'comments.book_id')
-    //         ->orderBy('quality', 'desc')
-    //         ->take(6)
-    //         ->get();
-
-    //     foreach($books as $book)
-    //     {
-    //         echo $book->book_id;
-    //         echo ' / ';
-    //         echo $book->numOfCom;
-    //         echo '/';
-    //         echo $book->rate;
-    //         echo '/';
-    //         echo $book->book_name;
-    //         echo '/';
-    //         echo $book->quality;
-    //         echo '<br>';
-    //     }
-    // }
-
+    
     public function changeLanguage($language, Request $request)
     {
         $request->session()->put('language', $language);
@@ -78,12 +48,12 @@ class HomeController extends Controller
         return back();
     }
 
-    public function search()
+    public function searchBook(Request $request)
     {
-        $keyword = $_GET['keyword'];
+        $keyword = $request->keyword;
 
-        $products = $this->productRepository->getSearchProduct($keyword);
+        $books = $this->bookRepository->getSearchBook($keyword);
 
-        return view('frontend.home.search', compact(['products', 'keyword']));
+        return view('front_end.home.search', compact(['books', 'keyword']));
     }
 }

@@ -23,4 +23,7 @@ return [
     'payment_method' => 'Payment method',
     'payment_on_delivery' => 'Payment on delivery',
     'checkout' => 'Checkout',
+    'logged_in' => 'You are not logged in.',
+    'login' => 'Login to checkout now!',
+    'shipping_fee' => 'Shipping fee',
 ];

@@ -3,7 +3,6 @@
 namespace App\Repositories\Eloquents;
 
 use App\Repositories\Contracts\CartInterface;
-use Melihovv\ShoppingCart\Facades\ShoppingCart as Cart;
 
 class CartRepository implements CartInterface
 {

@@ -20,6 +20,9 @@ return [
     'payment' => 'Thanh toán',
     'items_on_cart' => 'Sách trong giỏ hàng',
     'payment_method' => 'Phương thức thanh toán',
-    'payment_on_delivery' => 'Phương thức vận chuyển',
+    'payment_on_delivery' => 'Thanh toán khi nhận hàng',
     'checkout' => 'Thanh toán',
+    'logged_in' => 'Bạn chưa đăng nhập.',
+    'login' => 'Đăng nhập để thanh toán ngay!',
+    'shipping_fee' => 'Phí vận chuyển',
 ];

@@ -11,4 +11,5 @@ return[
     'book_des' => 'Mô tả',
     'same_author' => 'Cùng tác giả',
     'login_to_review' => "Đăng nhập để bình luận",
+    'post' => 'Đăng',
 ];

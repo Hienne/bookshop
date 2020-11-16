@@ -38,16 +38,29 @@
 
             <!-- Right -->
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <li class="nav-item">
+
+                    <form action="{{ route('home.search') }}" method="GET">
+                        @csrf
+                        <div class="bg-white shadow-sm rounded rounded-pill">
+                            <div class="input-group">
+                              <input type="search" name="keyword" placeholder="{{ trans('common.search') }}" class="form-control border-0 bg-white">
+                              <div class="input-group-append">
+                                <button id="btn_serach" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                              </div>
+                            </div>
+                          </div>
+                    </form>
+                    {{-- <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-search"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    </a> --}}
+                    {{-- <div>
                         {{ Form::open(['route' => ['search'], 'method' => 'GET', 'class' => 'form-inline px-4', 'role' => 'search']) }}
-                        {{ Form::search('keyword', '', ['class' => 'form-control form-control-sm shadow-none', 'placeholder' => trans('layouts.search'), 'autofocus']) }}
+                        {{ Form::search('keyword', '', ['class' => 'form-control form-control-sm shadow-none', 'placeholder' => trans('common.search'), 'autofocus']) }}
+                        {{ Form::button('add', 'add', ['class' => 'fas fa-search'])}}
                         {{ Form::close() }}
-                    </div>
+                    </div> --}}
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="cart-qty" href="{{ route('cart') }}">

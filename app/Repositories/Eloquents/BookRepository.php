@@ -31,6 +31,12 @@ class BookRepository extends EloquentRepository implements BookInterface
         return $this->_model->where('category_id', $id)->paginate(self::PAGINATE);
     }
 
+    public function getSearchBook($keyword)
+    {
+        return $this->_model->where('book_name', 'LIKE', '%' .$keyword .'%')
+                    ->paginate(self::PAGINATE);
+    }
+
     public function getBookByAuthor($authorId, $currentBookId)
     {
         //su dung collection / eloquent

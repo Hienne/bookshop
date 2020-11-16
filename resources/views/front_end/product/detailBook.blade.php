@@ -37,8 +37,8 @@
             </tr>
         </table>
 
-        {{-- {{ Form::open(['class' => 'form-horizontal']) }} --}}
-        {{  Form::open(['method' => 'POST', 'route' => ['cart.add']])  }}
+        {{ Form::open(['class' => 'form-horizontal']) }}
+        {{-- {{  Form::open(['method' => 'POST', 'route' => ['cart.add']])  }} --}}
         <div class="form-group row">
             <label class="col-lg-3 col-md-3 col-sm-3 col-form-label text-uppercase">
                 <b>{{ trans('common.number') }}:</b>
@@ -207,7 +207,7 @@
                             required></textarea>
                     </div>
                     <div class="float-right">
-                        <button type="submit" class="btn btn-primary">{{ trans('user.update') }}</button>
+                        <button type="submit" class="btn btn-primary">{{ trans('book.post') }}</button>
                     </div>
                 </form>
             </div>
@@ -218,13 +218,8 @@
 
 @section('script')
 <!-- Add to cart using ajax -->
-{{-- <script type="text/javascript">
-    if(Session::has('cart')) {
-        var cart = Session::get('cart')->totalQty;
-    }
-    else {
-        var cart = 0;
-    }
+<script type="text/javascript">
+    var cart = {{ Session::has('cart') ? Session::get('cart')->totalQty : 0 }};
     var text = '<i class="fas fa-shopping-cart"></i>';
     $(document).ready(function () {
         $('#addToCart').click(function (e) {
@@ -248,7 +243,7 @@
             });
         });
     });
-</script> --}}
+</script>
 <!-- Review -->
 <script type="text/javascript">
     $(document).ready(function () {

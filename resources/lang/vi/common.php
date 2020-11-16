@@ -30,4 +30,8 @@ return [
     'logout' => 'Đăng xuất',
     'authors' => 'Tác giả',
     'best_selling_book' => 'Sách bán chạy',
+    'search' => 'Tìm kiếm',
+    'search_result' => "Tìm kiếm cho từ khóa ':keyword'",
+    'top_results' => "Tìm thấy :books kết quả",
+    'empty' => 'Không có cuốn sách nào',
 ];

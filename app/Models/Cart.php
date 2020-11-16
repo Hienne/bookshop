@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Facades\Auth;
+
 class Cart
 {
     public $items;
@@ -19,24 +22,37 @@ class Cart
 
     public function add($item, $id, $qty) 
     {
-        $newItem = ['qty' => 0, 'price' => $item->price, 'item' => $item];
+        $newItem = ['qty' => 0, 'price' => 0, 'item' => $item];
         if($this->items) {
             if(array_key_exists($id, $this->items)) {
                 $newItem = $this->items[$id];
             }
         }
 
-        $newItem['qty']+= $qty;
+        $newItem['qty'] += $qty;
         $newItem['price'] = $item->price * $newItem['qty'];
         $this->items[$id] = $newItem;
-        $this->totalQty+= $qty;
-        $this->totalPrice += $item->price;
+        $this->totalQty += $qty;
+        $this->totalPrice += $newItem['price'];
     }
 
     public function delete($id)
     {
         $this->totalQty -= $this->items[$id]['qty'];
-        $this->totalPrice -= $this->items[$id]['qty'] * $this->items[$id]['price'];
+        $this->totalPrice -= $this->items[$id]['price'];
         unset($this->items[$id]); 
     }
+
+    public function update($id, $qty)
+    {
+        $this->totalQty -= $this->items[$id]['qty'];
+        $this->totalPrice -= $this->items[$id]['price'];
+
+        $this->items[$id]['qty'] = $qty;
+        $this->items[$id]['price'] = $this->items[$id]['item']->price * $qty;
+        
+        $this->totalQty += $this->items[$id]['qty'];
+        $this->totalPrice += $this->items[$id]['price'];
+    }
+
 }

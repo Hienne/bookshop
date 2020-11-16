@@ -26,7 +26,9 @@ class UserSeeder extends Seeder
                 'remember_token' => Str::random(10),
                 'role' => 0,
                 'created_at' =>new DateTime(),
-                'updated_at' => new DateTime()
+                'updated_at' => new DateTime(),
+                'provider' => 'facefook',
+                'provider_id' => '1',
             ]);
         }
     }

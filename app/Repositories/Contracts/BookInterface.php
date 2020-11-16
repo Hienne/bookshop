@@ -13,4 +13,6 @@ interface BookInterface
     public function getBestSellingBook();
 
     public function getBookByAuthor($authorId, $currentBookId);
+
+    public function getSearchBook($keyword);
 }

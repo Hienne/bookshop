@@ -4,7 +4,7 @@
                 class="fab fa-google"></i> Google</a>
     </div>
     <div class="col">
-        <a href="#" class="btn btn-block btn-facebook"><i
+        <a href="{{ route('login.facebook', ['provider'=> 'facebook']) }}" class="btn btn-block btn-facebook"><i
                 class="fab fa-facebook"></i> Facebook</a>
     </div>
     <div class="col">
