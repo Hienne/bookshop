@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
+use Auth;
 
 class SocialController extends Controller
 {
@@ -12,13 +13,15 @@ class SocialController extends Controller
     {
         return Socialite::driver($provider)->redirect();
     }
+
     public function callback($provider)
     {
         $getInfo = Socialite::driver($provider)->user(); 
         $user = $this->createUser($getInfo,$provider); 
-        auth()->login($user); 
+        Auth::login($user); 
         return redirect()->to('/home');
     }
+
     function createUser($getInfo,$provider){
         $user = User::where('provider_id', $getInfo->id)->first();
         if (!$user) {

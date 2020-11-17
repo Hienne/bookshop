@@ -34,11 +34,11 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-social row">
-                        <div class="col">
+                    <div class="footer-social">
+                        <div>
                         <h3 class="title">FOLLOW US ON SOCIAL</h3>
                         </div>
-                        <div class="col">
+                        <div>
                         <a href="https://www.facebook.com/lewisnguyen99" target="_blank" class="mr-4"><i
                                 class="fab fa-facebook-f"></i></a>
                         <a href="#" target="_blank" class="mr-4"><i
@@ -86,6 +86,8 @@
                 </div>
             </div>
         </div>
+
+        <div id="map"></div>
 
         <div class="py-4 border-top">
             <div class="row">

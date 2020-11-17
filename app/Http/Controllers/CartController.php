@@ -104,7 +104,7 @@ class CartController extends Controller
         }
 
         Session::forget('cart');
-
-        dd($order->books()->get());
+        
+        return redirect()->route('order');
     }
 }

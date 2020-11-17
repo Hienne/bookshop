@@ -39,7 +39,7 @@ class Book extends Model
 
     public function orders() 
     {
-        return $this->belongsToMany('App\Models\Order', 'order_details');
+        return $this->belongsToMany('App\Models\Order', 'order_details')->withPivot('price', 'quality');
     }
 
     public function comments()

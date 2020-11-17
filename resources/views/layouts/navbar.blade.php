@@ -44,23 +44,13 @@
                         @csrf
                         <div class="bg-white shadow-sm rounded rounded-pill">
                             <div class="input-group">
-                              <input type="search" name="keyword" placeholder="{{ trans('common.search') }}" class="form-control border-0 bg-white">
+                              <input type="search" name="keyword" placeholder="{{ trans('common.search') }}" class="form-control border-0 bg-white rounded rounded-pill">
                               <div class="input-group-append">
                                 <button id="btn_serach" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
                               </div>
                             </div>
                           </div>
                     </form>
-                    {{-- <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-search"></i>
-                    </a> --}}
-                    {{-- <div>
-                        {{ Form::open(['route' => ['search'], 'method' => 'GET', 'class' => 'form-inline px-4', 'role' => 'search']) }}
-                        {{ Form::search('keyword', '', ['class' => 'form-control form-control-sm shadow-none', 'placeholder' => trans('common.search'), 'autofocus']) }}
-                        {{ Form::button('add', 'add', ['class' => 'fas fa-search'])}}
-                        {{ Form::close() }}
-                    </div> --}}
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="cart-qty" href="{{ route('cart') }}">
@@ -100,7 +90,7 @@
                                 <a id="navbarDropdown" class="dropdown-item" href="#">
                                     {{ trans('common.profile') }}
                                 </a>
-                                <a id="navbarDropdown" class="dropdown-item" href="#">
+                                <a id="navbarDropdown" class="dropdown-item" href="{{ route('order') }}">
                                     {{ trans('common.my_order') }}
                                 </a>
                                 <a id="navbarDropdown" class="dropdown-item" href="#">

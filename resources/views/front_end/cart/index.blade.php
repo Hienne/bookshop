@@ -110,7 +110,12 @@
             </table>
             <div class="text-right">
                 @if ($totalQty !== 0)
-                <a href="{{ route('cart.checkout') }}" class="btn btn-primary">{{ trans('cart.checkout') }}</a>
+                @guest
+                    <a href="{{ route('login') }}" class="btn btn-primary">{{ trans('cart.checkout') }}</a>    
+                @else
+                    <a href="{{ route('cart.checkout') }}" class="btn btn-primary">{{ trans('cart.checkout') }}</a>    
+                @endguest
+                
                 @endif
             </div>
         </div>

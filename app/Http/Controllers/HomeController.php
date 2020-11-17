@@ -56,4 +56,10 @@ class HomeController extends Controller
 
         return view('front_end.home.search', compact(['books', 'keyword']));
     }
+
+    public function logout() 
+    {
+        Auth::logout();
+        return redirect('/');
+    }
 }

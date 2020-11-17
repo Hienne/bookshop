@@ -23,7 +23,6 @@ class CommentController extends Controller
         $comment['user_id'] = Auth::user()->id;
 
         $this->commentRepository->createComment($comment);
-        dd($comment);
-        // return back();
+        return back();
     }
 }

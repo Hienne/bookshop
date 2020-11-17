@@ -39,13 +39,11 @@ class BookRepository extends EloquentRepository implements BookInterface
 
     public function getBookByAuthor($authorId, $currentBookId)
     {
-        //su dung collection / eloquent
-        return $this->_model->all()->except([$currentBookId])->where('author_id', $authorId);
+        return $this->_model->all()->except([$currentBookId])->where('author_id', $authorId)->sortByDesc('price');
     }
 
     public function getBestSellingBook()
     {
-
         return $this->_model->join('order_details', 'books.id', '=', 'order_details.book_id')
             ->join('authors', 'books.author_id', '=', 'authors.id')
             ->leftJoin('comments', 'books.id', '=', 'comments.book_id')

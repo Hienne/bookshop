@@ -5,6 +5,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SocialController;
 use App\Repositories\Eloquents\CartRepository;
 use Illuminate\Support\Facades\Route;
@@ -26,11 +27,12 @@ Route::group(['middleware' => 'localization'], function() {
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
     /**********************Auth*************************************/
-    Route::middleware(['auth:sanctum', 'verified'])
-    ->get('/home', [HomeController::class, 'index'])->name('home.login');
+    // Route::middleware(['auth:sanctum', 'verified'])
+    // ->get('/home', [HomeController::class, 'index'])->name('home.login');
+    Route::get('/home', [HomeController::class, 'index']);
 
 
-    Route::post('/logout', [LoginController::class, 'userLogout'])->name('home.logout');
+    Route::post('/logout', [HomeController::class, 'logout'])->name('home.logout');
 
 
     /***********************Cart*****************************/
@@ -42,8 +44,8 @@ Route::group(['middleware' => 'localization'], function() {
         Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
     });
 
-    Route::get('/redirect/{provider}', [SocialController::class, 'redirect'])->name('login.facebook');
-    Route::get('/callback/{provider}', [SocialController::class, 'callback']);
+    Route::get('login/{provider}', [SocialController::class, 'redirect'])->name('oauth');
+    Route::get('login/{provider}/callback', [SocialController::class, 'callback']);
     
 
 
@@ -59,21 +61,11 @@ Route::group(['middleware' => 'localization'], function() {
         Route::get('/', [BookController::class, 'showAllBook'])->name('listBook');
         Route::get('/detail/{id}', [BookController::class, 'getBookById'])->name('detailBook');
     });
-    
-    // Route::get('/detailBook/{id}', [BookController::class, 'getBookById'])
-    //     ->middleware('auth')
-    //     ->name('detailBook');
-
-    // Route::get('/detailBook', function(){
-    //     return view('front_end.product.show');
-    // });
-
 
     Route::post('/review', [CommentController::class, 'store'])->name('comment.store');
 
-    /*********************Login Google************************** */
-    Route::get('/redirect', [LoginController::class, 'redirectToProvider'])->name('loginWithGG');
-    Route::get('/callback', [LoginController::class, 'handleProviderCallback']);
+    /*************************Order****************************/
+    Route::get('/order', [OrderController::class, 'index'])->name('order');
 });
 
 

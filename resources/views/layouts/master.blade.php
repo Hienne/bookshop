@@ -13,6 +13,36 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/user.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/common.css') }}">
 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzOmQGgvCpU18nXbftQ0b9pcZPzP0PrQc&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+        #map {
+            height: 300px;
+            width: 800px;
+            margin:auto;
+        }
+    </style>
+    <script>
+        let map;
+
+        function initMap() {
+            const myMap = { lat: 21.036283, lng: 105.800941 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+            scaleControl: true,
+            center: myMap,
+            zoom: 16,
+        });
+        const infowindow = new google.maps.InfoWindow();
+        infowindow.setContent("<b>165 Dương Quảng Hàm</b>");
+        const marker = new google.maps.Marker({ map, position: myMap });
+        marker.addListener("click", () => {
+          infowindow.open(map, marker);
+        });
+        }
+    </script>
 
     <!-- Title -->
     <title>@yield('title')</title>
@@ -43,8 +73,6 @@
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 
     @yield('script')
-
-    
 </body>
 
 </html>

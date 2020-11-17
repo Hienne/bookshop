@@ -47,7 +47,7 @@
                 <div class="input-group">
                     <button type="button" class="btn btn-primary" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                         class="minus decrease"><i class="fas fa-minus"></i></button>
-                    <input class="w-25 quantity d-block form-control" min="0" name="qty" id="qty" value="1" type="number">
+                    <input class="w-25 quantity d-block form-control" min="1" max="10" name="qty" id="qty" value="1" type="number" disabled>
                     <button type="button" class="btn btn-primary" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                         class="plus increase"><i class="fas fa-plus-circle"></i></button>
                 </div>
